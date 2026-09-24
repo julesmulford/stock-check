@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 import { alertableEvents } from './compare';
 import { AVAILABILITY_LABEL, formatMoney } from './price';
+import { priceTableHtml, priceTableText, ukDate, type PriceTable } from './prices-table';
 import type { MonitorEvent, ScrapeResult, Target } from './types';
 
 export interface Alert {
@@ -11,23 +12,37 @@ export interface Alert {
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/** Short name for a subject line; retailer alone is ambiguous for shops with several products. */
+const subjectLabel = (t: Target) => (t.group === 'C' ? t.name : `${t.retailer} (stands)`);
+
+/** True when the run has something beyond the daily table: a price drop or a newly broken target. */
+export function hasAlerts(events: MonitorEvent[]): boolean {
+  const { drops, failures } = alertableEvents(events);
+  return drops.length > 0 || failures.length > 0;
+}
+
 /**
- * Build the single combined message for this run, or null when there's nothing to send.
- * A message is sent only for price drops and for targets that have just failed three runs in a row.
+ * The daily email: details of any price drops and newly broken targets first, then the full
+ * prices table. Sent every run, whether or not anything changed.
  */
-export function buildAlert(events: MonitorEvent[], targets: Target[], results: ScrapeResult[]): Alert | null {
+export function buildEmail(events: MonitorEvent[], targets: Target[], results: ScrapeResult[], table: PriceTable): Alert {
   const { drops, failures, recovered } = alertableEvents(events);
-  if (!drops.length && !failures.length) return null;
   const byId = (id: string) => targets.find((t) => t.id === id)!;
   const resultFor = (id: string) => results.find((r) => r.targetId === id);
 
-  const parts: string[] = [];
-  if (drops.length) parts.push(`${drops.length} price drop${drops.length > 1 ? 's' : ''}`);
-  if (failures.length) parts.push(`${failures.length} broken target${failures.length > 1 ? 's' : ''}`);
-  const subject = `Price monitor: ${parts.join(', ')}`;
+  let subject: string;
+  if (drops.length === 1) {
+    const d = drops[0];
+    subject = `Price drop: ${subjectLabel(byId(d.targetId))} ${formatMoney(d.oldPrice, d.currency)} → ${formatMoney(d.newPrice, d.currency)} (−${d.pctDrop}%)`;
+  } else if (drops.length > 1) {
+    subject = `${drops.length} price drops: ${drops.map((d) => subjectLabel(byId(d.targetId))).join(', ')}`;
+  } else {
+    subject = `Daily prices, ${ukDate(table.generatedAt)}`;
+  }
+  if (failures.length) subject += ` · ${failures.length} broken target${failures.length > 1 ? 's' : ''}`;
 
   const text: string[] = [];
-  const html: string[] = [];
+  const html: string[] = ['<div style="font-family:Arial,Helvetica,sans-serif;color:#222">'];
 
   if (drops.length) {
     text.push('PRICE DROPS', '');
@@ -64,9 +79,13 @@ export function buildAlert(events: MonitorEvent[], targets: Target[], results: S
 
   if (recovered.length) {
     const names = recovered.map((r) => byId(r.targetId).retailer).join(', ');
-    text.push(`Recovered since last alert: ${names}`);
+    text.push(`Recovered since last alert: ${names}`, '');
     html.push(`<p>Recovered since last alert: ${esc(names)}</p>`);
   }
+
+  if (drops.length || failures.length) html.push('<h2>All prices</h2>');
+  text.push(priceTableText(table));
+  html.push(priceTableHtml(table), '</div>');
 
   return { subject, text: text.join('\n'), html: html.join('\n') };
 }

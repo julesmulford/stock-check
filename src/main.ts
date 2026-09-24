@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import { chromium } from 'playwright';
 import { applyAll } from './compare';
 import { fetchGbpRates, toGbp } from './fx';
-import { buildAlert, channelsFromEnv, sendAlert } from './notify';
-import { consoleReport, markdownReport, pricesTable, type ReportRow } from './report';
+import { buildEmail, channelsFromEnv, hasAlerts, sendAlert } from './notify';
+import { buildPriceTable, priceTableMarkdown } from './prices-table';
+import { consoleReport, markdownReport, type ReportRow } from './report';
 import { scrapeTarget } from './scrape';
 import { loadState, saveState, STATE_PATH } from './state';
 import { targets as allTargets } from './targets';
@@ -61,7 +62,8 @@ async function main() {
   // Prune against the full config so that --only runs don't drop other targets' state.
   const { state: nextState, events } = applyAll(state, allTargets, results, startedAt);
   nextState.fx = fx ?? state.fx;
-  const prices = pricesTable(only ? targets : allTargets, nextState, results, events, { generatedAt: startedAt, fx });
+  const table = buildPriceTable(only ? targets : allTargets, nextState, results, events, { generatedAt: startedAt, fx });
+  const prices = priceTableMarkdown(table);
   const rows: ReportRow[] = targets.map((target) => ({
     target,
     result: results.find((r) => r.targetId === target.id)!,
@@ -77,17 +79,19 @@ async function main() {
     console.log('');
   }
 
-  const alert = buildAlert(events, allTargets, results);
-  let notifySummary = 'No price drops or newly broken targets, so nothing sent.';
-  if (alert) {
+  // The daily email goes out on every full run. A partial --only run would send a partial table,
+  // so it only emails when there's a drop or a newly broken target.
+  const email = buildEmail(events, allTargets, results, table);
+  let notifySummary = 'Partial run with no price drops or newly broken targets, so no email sent.';
+  if (!only || hasAlerts(events)) {
     if (dryRun) {
-      notifySummary = `Would send "${alert.subject}" (dry run: not sent).`;
-      console.log(`--- Message that would be sent ---\n${alert.text}\n----------------------------------\n`);
+      notifySummary = `Would send "${email.subject}" (dry run: not sent).`;
+      console.log(`--- Email that would be sent ---\nSubject: ${email.subject}\n\n${email.text}\n--------------------------------\n`);
     } else {
       // Send before saving: if sending fails the job fails, state stays unchanged,
       // and the next run detects the same drop again.
-      const sent = await sendAlert(alert, channelsFromEnv());
-      notifySummary = `Sent "${alert.subject}" via ${sent.join(' and ')}.`;
+      const sent = await sendAlert(email, channelsFromEnv());
+      notifySummary = `Sent "${email.subject}" via ${sent.join(' and ')}.`;
     }
   }
   console.log(notifySummary);
@@ -100,7 +104,7 @@ async function main() {
   }
 
   if (dryRun) {
-    console.log(`\n${prices}\nDry run: state and ${PRICES_PATH} not saved.`);
+    console.log(`Dry run: state and ${PRICES_PATH} not saved.`);
   } else {
     saveState(nextState);
     // A partial --only run would leave other targets out of the table, so only write it for full runs.

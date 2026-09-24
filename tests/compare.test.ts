@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { applyAll, applyResult, FAILURE_ALERT_THRESHOLD, HISTORY_LIMIT, pctChange } from '../src/compare';
-import { buildAlert } from '../src/notify';
-import type { ScrapeResult, State, Target, TargetState } from '../src/types';
+import { buildEmail, hasAlerts } from '../src/notify';
+import { buildPriceTable } from '../src/prices-table';
+import type { MonitorEvent, ScrapeResult, State, Target, TargetState } from '../src/types';
 
 const target: Target = { id: 'kef', name: 'KEF S3', retailer: 'KEF UK', url: 'https://uk.kef.com/x', group: 'B', country: 'UK', vat: 'incl' };
 const ok = (price: number, currency = 'GBP', availability: ScrapeResult['availability'] = 'in_stock'): ScrapeResult => ({
@@ -112,27 +113,48 @@ describe('applyAll', () => {
   });
 });
 
-describe('buildAlert', () => {
+describe('buildEmail', () => {
   const other: Target = { id: 'nord', name: 'Nord Three', retailer: 'Nord', url: 'https://nord.example', group: 'C', country: 'UK', vat: 'incl' };
+  const table = (events: MonitorEvent[]) => {
+    const state: State = {
+      version: 1,
+      targets: {
+        kef: { name: '', retailer: '', url: '', lastPrice: 599, currency: 'GBP', availability: 'in_stock', consecutiveFailures: 0, failureAlerted: false, history: [] },
+      },
+    };
+    return buildPriceTable([target, other], state, [ok(599)], events, { generatedAt: '2026-09-25T06:03:00Z', fx: null });
+  };
 
-  it('sends nothing when there are no drops or new failure alerts', () => {
-    expect(buildAlert([{ type: 'rise', targetId: 'kef', oldPrice: 1, newPrice: 2, currency: 'GBP', pctRise: 100 }], [target], [])).toBeNull();
-    expect(buildAlert([{ type: 'failure', targetId: 'kef', consecutive: 2, status: 'not_found' }], [target], [])).toBeNull();
+  it('still sends the daily table when nothing changed', () => {
+    const events: MonitorEvent[] = [{ type: 'same', targetId: 'kef' }];
+    const email = buildEmail(events, [target, other], [ok(599)], table(events));
+    expect(email.subject).toBe('Daily prices, 25 Sept');
+    expect(hasAlerts(events)).toBe(false);
+    expect(email.text).toContain('KEF S3 FLOOR STANDS');
+    expect(email.text).not.toContain('PRICE DROPS');
+    expect(email.html).toContain('<table');
   });
 
-  it('combines drops and failures into one message with the required details', () => {
-    const alert = buildAlert(
-      [
-        { type: 'drop', targetId: 'kef', oldPrice: 699, newPrice: 599, currency: 'GBP', pctDrop: 14.3 },
-        { type: 'failure_alert', targetId: 'nord', consecutive: 3, status: 'not_found', error: 'Price not found' },
-      ],
-      [target, other],
-      [ok(599)],
-    )!;
-    expect(alert.subject).toBe('Price monitor: 1 price drop, 1 broken target');
-    for (const s of ['KEF S3', 'KEF UK', '£699.00', '£599.00', '14.3%', 'https://uk.kef.com/x', 'Nord', 'Price not found']) {
-      expect(alert.text).toContain(s);
+  it('puts drop details and broken targets before the table', () => {
+    const events: MonitorEvent[] = [
+      { type: 'drop', targetId: 'kef', oldPrice: 699, newPrice: 599, currency: 'GBP', pctDrop: 14.3 },
+      { type: 'failure_alert', targetId: 'nord', consecutive: 3, status: 'not_found', error: 'Price not found' },
+    ];
+    const email = buildEmail(events, [target, other], [ok(599)], table(events));
+    expect(hasAlerts(events)).toBe(true);
+    expect(email.subject).toBe('Price drop: KEF UK (stands) £699.00 → £599.00 (−14.3%) · 1 broken target');
+    for (const s of ['KEF S3', 'KEF UK (UK)', '£699.00', '£599.00', '14.3%', 'https://uk.kef.com/x', 'Nord', 'Price not found']) {
+      expect(email.text).toContain(s);
     }
-    expect(alert.html).toContain('<a href="https://uk.kef.com/x">');
+    expect(email.text.indexOf('PRICE DROPS')).toBeLessThan(email.text.indexOf('KEF S3 FLOOR STANDS'));
+    expect(email.html.indexOf('<h2>Price drops</h2>')).toBeLessThan(email.html.indexOf('<h2>All prices</h2>'));
+  });
+
+  it('lists several drops in the subject', () => {
+    const events: MonitorEvent[] = [
+      { type: 'drop', targetId: 'kef', oldPrice: 699, newPrice: 599, currency: 'GBP', pctDrop: 14.3 },
+      { type: 'drop', targetId: 'nord', oldPrice: 1010, newPrice: 950, currency: 'GBP', pctDrop: 5.9 },
+    ];
+    expect(buildEmail(events, [target, other], [ok(599)], table(events)).subject).toBe('2 price drops: KEF UK (stands), Nord Three');
   });
 });

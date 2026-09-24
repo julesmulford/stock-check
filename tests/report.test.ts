@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { toGbp } from '../src/fx';
-import { gbpInclVat, pricesTable } from '../src/report';
+import { buildPriceTable, gbpInclVat, priceTableHtml, priceTableMarkdown, priceTableText } from '../src/prices-table';
 import type { FxRates, MonitorEvent, ScrapeResult, State, Target, TargetState } from '../src/types';
 
 const fx: FxRates = { date: '2026-09-24', perGbp: { EUR: 1.163, USD: 1.322 } };
@@ -49,7 +49,8 @@ describe('pricesTable', () => {
   const ok = (id: string): ScrapeResult => ({ targetId: id, status: 'ok', notes: [] });
   const results: ScrapeResult[] = [ok('stand'), ok('us'), ok('fr'), { targetId: 'uk', status: 'blocked', notes: [] }];
   const events: MonitorEvent[] = [{ type: 'drop', targetId: 'stand', oldPrice: 749, newPrice: 699, currency: 'GBP', pctDrop: 6.7 }];
-  const md = pricesTable(targets, state, results, events, { generatedAt: '2026-09-24T06:05:00Z', fx });
+  const table = buildPriceTable(targets, state, results, events, { generatedAt: '2026-09-24T06:05:00Z', fx });
+  const md = priceTableMarkdown(table);
 
   it('sorts each section cheapest first, including UK VAT', () => {
     const amps = md.slice(md.indexOf('## Purifi'));
@@ -74,5 +75,18 @@ describe('pricesTable', () => {
 
   it('states the exchange rates used', () => {
     expect(md).toContain('reference rates for 2026-09-24');
+  });
+
+  it('renders the same rows as an HTML table, highlighting drops and linking retailers', () => {
+    const html = priceTableHtml(table);
+    expect(html).toContain('<a href="https://kef.example">KEF UK</a>');
+    expect(html).toMatch(/background:#e6f4ea;"><strong>↓ £50\.00 \(−6\.7%\)<\/strong>/);
+    expect(html).toContain('US$1,150.00 + VAT');
+  });
+
+  it('renders a plain-text version with GBP incl. VAT first for the amplifiers', () => {
+    const text = priceTableText(table);
+    expect(text).toContain('  £699.00  KEF UK (UK) · In stock · ↓ £50.00 (−6.7%)');
+    expect(text).toContain('  £1,043.87 (US$1,150.00 + VAT)  VTV amp, VTV (USA) · In stock');
   });
 });

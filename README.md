@@ -4,7 +4,7 @@ Once a day, a GitHub Actions workflow visits each product page in [src/targets.t
 
 - Runs every day at 06:00 UTC, which is 07:00 UK time in summer and 06:00 in winter, and on demand from the Actions tab.
 - Visits pages one at a time with a pause between them, using an ordinary desktop Chromium. It doesn't work around bot protection: blocked sites are flagged in the run summary.
-- Sends one combined email per run, and only when something dropped or broke. Price rises are recorded in the history without an alert.
+- Sends one email every morning with the full prices table. When a price has dropped, the subject says so and the drop details come first, above the table (drops are highlighted in it too). Targets that have just failed three runs in a row are listed the same way. Price rises show in the table's "Today" column but get no special alert.
 - Every run updates **[PRICES.md](PRICES.md)**, a table of every item's current price, GBP equivalent, country and stock, and writes it to the job summary too.
 
 ## The daily prices table
@@ -53,7 +53,7 @@ The currency is recorded with every price, and prices are only compared within t
 | `TELEGRAM_BOT_TOKEN` | optional | from [@BotFather](https://t.me/BotFather) |
 | `TELEGRAM_CHAT_ID` | optional | your chat ID (send the bot a message, then open `https://api.telegram.org/bot<token>/getUpdates`) |
 
-Telegram is only used when both Telegram secrets are set. If a run has something to report but no channel is configured, or the email fails to send, the job fails and doesn't save state, so the next run reports the same drop again.
+Telegram is only used when both Telegram secrets are set; it gets the plain-text version of the email. If no channel is configured, or the email fails to send, the job fails and doesn't save state, so the next run reports any drop again. A partial run (`--only=...`) emails only when there's a drop or a newly broken target, so test runs don't send a half-empty table.
 
 ## Running locally
 
@@ -65,7 +65,7 @@ npm run dry-run                                     # all targets; nothing saved
 npx tsx src/main.ts --dry-run --only=kef-uk-s3-indigo,audiolounge-kef-s3-indigo
 ```
 
-The dry run prints each target's price, stock, source and diagnostic notes. It also compares against the saved state and shows the email it would have sent. To send for real locally, set the same variables as the secrets and run `npm run monitor`.
+The dry run prints each target's price, stock, source and diagnostic notes. It also compares against the saved state and prints the plain-text version of the email it would have sent. To send for real locally, set the same variables as the secrets and run `npm run monitor`.
 
 ## Adding or removing a target
 
