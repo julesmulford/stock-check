@@ -1,7 +1,10 @@
 import type { Target } from './types';
 
-/** GTIN of the KEF S3 Floor Stand in Indigo Matte Special Edition (KEF SKU SP4062CA). */
-const KEF_S3_INDIGO_GTIN = '637203049866';
+/**
+ * Matches the KEF S3 Floor Stand in Indigo Matte Special Edition in JSON-LD, by GTIN or KEF SKU
+ * (retailers list one or the other).
+ */
+const KEF_S3_INDIGO = '637203049866|SP4062CA';
 
 /** Price selectors for WooCommerce product pages after a variation has been chosen. */
 const WOO_VARIATION_PRICE = [
@@ -56,7 +59,7 @@ export const targets: Target[] = [
       steps: [
         { action: 'click', selector: 'label:has(input[value="Indigo Matte Special Edition"])' },
       ],
-      offerMatch: KEF_S3_INDIGO_GTIN,
+      offerMatch: KEF_S3_INDIGO,
     },
   },
   {
@@ -68,7 +71,7 @@ export const targets: Target[] = [
     variant: {
       label: 'Indigo Matte',
       steps: [{ action: 'select', selector: 'select[name="options[Finish]"]', value: 'Indigo Matte' }],
-      offerMatch: KEF_S3_INDIGO_GTIN,
+      offerMatch: KEF_S3_INDIGO,
     },
   },
   {
@@ -88,6 +91,35 @@ export const targets: Target[] = [
     selectors: WOO_VARIATION_PRICE,
     stockSelector: '.single_variation .woocommerce-variation-availability',
   },
+  {
+    id: 'dougbrady-kef-s3-indigo',
+    name: 'KEF S3 Floor Stands, Indigo Matte SE (pair)',
+    retailer: 'Doug Brady HiFi',
+    url: 'https://dougbradyhifi.com/products/kef-s3-floor-stand',
+    group: 'B',
+    variant: {
+      label: 'Indigo Blue',
+      // A custom dropdown: open it, then choose the option.
+      steps: [
+        { action: 'click', selector: '.product-options .custom-select__btn' },
+        { action: 'click', selector: 'li[data-value="Indigo Blue"]' },
+      ],
+      offerMatch: KEF_S3_INDIGO,
+    },
+  },
+  {
+    id: 'hifisound-kef-s3-indigo',
+    name: 'KEF S3 Floor Stands, Indigo Matte SE (pair)',
+    retailer: 'HifiSound',
+    url: 'https://www.hifisound.co.uk/speakers-c62/speaker-stands-c120/kef-s3-floor-stand-p6023',
+    group: 'B',
+    note: 'Listed as "Gloss Indigo"; KEF only makes the S3 in Indigo Matte.',
+    variant: {
+      label: 'Gloss Indigo',
+      steps: [{ action: 'select', selector: 'select.attributes-select', value: '1266' }],
+    },
+    selectors: ['#js-product-price .product-content__price--inc'],
+  },
 
   // Group C: other products.
   {
@@ -99,11 +131,27 @@ export const targets: Target[] = [
     note: 'Base price, excluding EU VAT. Op-amp upgrades add €200 / €400; cover colour does not change the price.',
   },
   {
+    id: 'apollon-purifi-1et6525sa-st',
+    name: 'Apollon Purifi 1ET6525SA ST Stereo Amplifier',
+    retailer: 'Apollon Audio',
+    url: 'https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/',
+    group: 'C',
+    note: 'Base price, excluding EU VAT. Built to order (15-20 working days). Op-amp upgrades add €200 / €400; cover colour does not change the price.',
+  },
+  {
     // Successor to the discontinued LPA-S400ET (1ET400A).
     id: 'audiophonics-lpa-s450et',
     name: 'Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W',
     retailer: 'Audiophonics',
     url: 'https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html',
+    group: 'C',
+    note: 'Price includes VAT.',
+  },
+  {
+    id: 'audiophonics-hpa-s450et',
+    name: 'Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W',
+    retailer: 'Audiophonics',
+    url: 'https://www.audiophonics.fr/en/power-amplifiers/audiophonics-hpa-s450et-p-20205.html',
     group: 'C',
     note: 'Price includes VAT.',
   },

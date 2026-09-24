@@ -81,8 +81,10 @@ The workflow commits this file after each run. That also keeps the repo active, 
 - **Peter Tyson**: the generic URL is a single-colour product, "KEF S3 Floor Stands - Indigo Blue" (SKU `KEFS3STDBLUE`). No selection is needed.
 - **HBH Woolacotts** redirects to its clearance section.
 - **Audio Lounge** has one price for all colours. Its colour `<select>` is hidden behind swatch buttons, so the monitor clicks the Indigo swatch and checks that it registered.
-- **Apollon Audio** prices exclude EU VAT. Cover colour doesn't change the price. Op-amp options do: Sonic Imagery 994 adds €200 and Sparkos Labs SS2590 PRO adds €400. Mains voltage and binding posts are free choices. The monitor tracks the base price.
-- **Audiophonics**: tracks the LPA-S450ET (Purifi 1ET6525SA), which replaced the discontinued LPA-S400ET (1ET400A). Prices include VAT, and the page has no options that change the price.
+- **Doug Brady HiFi** uses a custom colour dropdown. The monitor opens it, chooses "Indigo Blue", and takes that colour's own price from the page data (KEF SKU `SP4062CA`).
+- **HifiSound** calls the colour "Gloss Indigo", but KEF only makes the S3 in Indigo Matte. Its £699 price matches the pair price elsewhere. The page's structured data describes the Slate Grey version, so the monitor reads the displayed price after choosing Indigo.
+- **Apollon Audio**: tracks the 1ET400A ST and the 1ET6525SA ST (newer module, built to order in 15–20 working days). Prices exclude EU VAT. Cover colour doesn't change the price. Op-amp options do: Sonic Imagery 994 adds €200 and Sparkos Labs SS2590 PRO adds €400. On the 1ET6525SA ST, a 5-year warranty adds 10%. Mains voltage and binding posts are free choices. The monitor tracks the base price.
+- **Audiophonics**: tracks the LPA-S450ET (Purifi 1ET6525SA), which replaced the discontinued LPA-S400ET (1ET400A), and the HPA-S450ET (the same module in a larger case). Prices include VAT, and neither page has options that change the price.
 - **Nord Acoustics**: the monitor tracks the base price with the default options. Paid add-ons:
   - SE case +£150
   - dual SMPS1200A400 PSUs +£175
