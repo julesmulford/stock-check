@@ -79,6 +79,8 @@ export const targets: Target[] = [
     retailer: 'Unilet Sound & Vision',
     url: 'https://unilet.net/product/kef-s3-floor-stands/',
     group: 'B',
+    // Cloudflare blocks GitHub-hosted runners; tracked with Visualping instead (see README).
+    enabled: false,
     variant: {
       label: 'Indigo Matte Special Edition',
       steps: [{ action: 'select', selector: 'select#pa_colour', value: 'indigo-matte-special-edition' }],
@@ -92,6 +94,8 @@ export const targets: Target[] = [
     retailer: 'Hi-Fi Corner',
     url: 'https://www.hificorner.co.uk/product/kef-s3-floor-stand/',
     group: 'B',
+    // Cloudflare blocks GitHub-hosted runners; tracked with Visualping instead (see README).
+    enabled: false,
     variant: {
       label: 'Indigo Matte Special Edition',
       steps: [
@@ -126,6 +130,8 @@ export const targets: Target[] = [
     retailer: 'Made.com',
     url: 'https://www.made.com/style/sv045562/h01099',
     group: 'C',
+    // Blocked by bot protection from any connection; tracked with Visualping instead (see README).
+    enabled: false,
     note: 'Returned HTTP 403 "Access Denied" (Akamai bot protection) when inspected. Not worked around.',
   },
   {
@@ -137,10 +143,11 @@ export const targets: Target[] = [
     note: 'Base price, excluding EU VAT. Op-amp upgrades add €200 / €400; cover colour does not change the price.',
   },
   {
-    id: 'audiophonics-lpa-s400et',
-    name: 'Audiophonics LPA-S400ET Purifi 1ET400A 2x400W',
+    // Successor to the discontinued LPA-S400ET (1ET400A).
+    id: 'audiophonics-lpa-s450et',
+    name: 'Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W',
     retailer: 'Audiophonics',
-    url: 'https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s400et-power-amplifier-class-d-purifi-1et400a-2x400w-4-ohm-p-14557.html',
+    url: 'https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html',
     group: 'C',
     note: 'Price includes VAT.',
   },

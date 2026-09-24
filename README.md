@@ -78,12 +78,19 @@ The workflow commits this file after each run. That also keeps the repo active, 
 
 ## Notes on the current targets
 
-- **Made.com** returns HTTP 403 "Access Denied" from its bot protection (Akamai), so it's reported as blocked. After three runs it sends a single "broken target" alert, then stays quiet until it works again. Set `enabled: false` to stop checking it.
+- **Switched off (`enabled: false`) and tracked with Visualping instead**:
+  - **Made.com** returns HTTP 403 "Access Denied" from its bot protection (Akamai), from home connections as well as GitHub.
+  - **Unilet** and **Hi-Fi Corner** load normally from a home connection, but Cloudflare shows GitHub's servers a "Just a moment..." challenge.
+
+  The Visualping URLs (the WooCommerce ones open with Indigo already selected):
+  - https://www.made.com/style/sv045562/h01099
+  - https://unilet.net/product/kef-s3-floor-stands/?attribute_pa_colour=indigo-matte-special-edition
+  - https://www.hificorner.co.uk/product/kef-s3-floor-stand/?attribute_pa_standard_colour_options=indigo-matte-special-edition
 - **Peter Tyson**: the generic URL is a single-colour product, "KEF S3 Floor Stands - Indigo Blue" (SKU `KEFS3STDBLUE`). No selection is needed.
 - **HBH Woolacotts** redirects to its clearance section.
 - **Audio Lounge** has one price for all colours. Its colour `<select>` is hidden behind swatch buttons, so the monitor clicks the Indigo swatch and checks that it registered.
 - **Apollon Audio** prices exclude EU VAT. Cover colour doesn't change the price. Op-amp options do: Sonic Imagery 994 adds €200 and Sparkos Labs SS2590 PRO adds €400. Mains voltage and binding posts are free choices. The monitor tracks the base price.
-- **Audiophonics** prices include VAT. At setup the product was marked **discontinued**.
+- **Audiophonics**: tracks the LPA-S450ET (Purifi 1ET6525SA), which replaced the discontinued LPA-S400ET (1ET400A). Prices include VAT, and the page has no options that change the price.
 - **Nord Acoustics**: the monitor tracks the base price with the default options. Paid add-ons:
   - SE case +£150
   - dual SMPS1200A400 PSUs +£175
