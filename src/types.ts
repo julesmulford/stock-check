@@ -25,8 +25,20 @@ export interface Target {
   retailer: string;
   url: string;
   group: Group;
+  /** Country the seller ships from, shown in the prices table. */
+  country: string;
+  /**
+   * Whether the listed price already includes VAT. UK prices always do. For sellers outside the UK
+   * showing prices without VAT, the prices table adds an estimate of the 20% UK import VAT.
+   */
+  vat: 'incl' | 'excl';
   /** Set to false to keep a target in the file without visiting it. */
   enabled?: boolean;
+  /**
+   * The page publishes a price range for its options (JSON-LD AggregateOffer). Track the lowest
+   * price, i.e. the base price with the cheapest options.
+   */
+  priceFrom?: boolean;
   variant?: {
     /** Human description shown in reports, e.g. "Indigo Matte Special Edition". */
     label: string;
@@ -59,6 +71,8 @@ export interface ScrapeResult {
   currency?: string;
   availability?: Availability;
   source?: PriceSource;
+  /** The price converted to GBP at the run's exchange rate (same as `price` for GBP). */
+  gbp?: number;
   httpStatus?: number;
   finalUrl?: string;
   error?: string;
@@ -70,6 +84,8 @@ export interface HistoryEntry {
   at: string;
   price: number;
   currency: string;
+  /** GBP equivalent at the time of the reading. */
+  gbp?: number;
   availability?: Availability;
   change: 'initial' | 'drop' | 'rise' | 'currency' | 'stock';
 }
@@ -80,6 +96,8 @@ export interface TargetState {
   url: string;
   lastPrice?: number;
   currency?: string;
+  /** GBP equivalent of `lastPrice` at the time it was read. */
+  lastGbp?: number;
   availability?: Availability;
   lastCheckedAt?: string;
   lastSuccessAt?: string;
@@ -93,7 +111,15 @@ export interface TargetState {
 export interface State {
   version: 1;
   updatedAt?: string;
+  /** Exchange rates used for the latest run's GBP conversions. */
+  fx?: FxRates;
   targets: Record<string, TargetState>;
+}
+
+/** Units of each currency per 1 GBP, from the ECB reference rates published on `date`. */
+export interface FxRates {
+  date: string;
+  perGbp: Record<string, number>;
 }
 
 export type MonitorEvent =

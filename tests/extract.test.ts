@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { collectOffers, parseJsonLdBlocks, pickOffer, resolvePrice, type RawPageData } from '../src/extract';
 import type { Target } from '../src/types';
 
-const plainTarget: Target = { id: 't', name: 'T', retailer: 'R', url: 'https://example.com', group: 'A' };
+const plainTarget: Target = { id: 't', name: 'T', retailer: 'R', url: 'https://example.com', group: 'A', country: 'UK', vat: 'incl' };
 const variantTarget = (offerMatch?: string): Target => ({
   ...plainTarget,
   group: 'B',
@@ -51,6 +51,20 @@ describe('collectOffers', () => {
   it('ignores offers that are not attached to a product', () => {
     const block = JSON.stringify({ '@type': 'Organization', offers: { '@type': 'Offer', price: '10', priceCurrency: 'GBP' } });
     expect(collectOffers(parseJsonLdBlocks([block]))).toEqual([]);
+  });
+
+  it('ignores a price range unless the target asks for the "from" price', () => {
+    // Shape from vtvamplifier.com: options change the price, so only a range is published.
+    const block = JSON.stringify({
+      '@type': 'Product',
+      name: 'VTV Stereo',
+      offers: { '@type': 'AggregateOffer', lowPrice: '1150.00', highPrice: '2594.00', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    });
+    expect(collectOffers(parseJsonLdBlocks([block]))).toEqual([]);
+    expect(collectOffers(parseJsonLdBlocks([block]), { acceptLowPrice: true })).toEqual([
+      expect.objectContaining({ price: 1150, currency: 'USD', availability: 'in_stock' }),
+    ]);
+    expect(resolvePrice(raw({ jsonLd: [block] }), { ...plainTarget, priceFrom: true }, [])).toMatchObject({ price: 1150, source: 'json-ld' });
   });
 
   it('tolerates raw control characters and skips invalid blocks', () => {

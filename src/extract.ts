@@ -59,15 +59,18 @@ function idText(node: Record<string, unknown>): string {
     .join(' | ');
 }
 
-/** Walk JSON-LD (including @graph, hasVariant and nested offers) and return every product offer. */
-export function collectOffers(roots: unknown[]): OfferCandidate[] {
+/**
+ * Walk JSON-LD (including @graph, hasVariant and nested offers) and return every product offer.
+ * An AggregateOffer's lowPrice counts only when it equals highPrice, or with `acceptLowPrice`.
+ */
+export function collectOffers(roots: unknown[], opts: { acceptLowPrice?: boolean } = {}): OfferCandidate[] {
   const offers: OfferCandidate[] = [];
 
   const visitOffer = (node: Record<string, unknown>, productContext: string) => {
     const types = typesOf(node);
     const spec = asArray(node.priceSpecification as Record<string, unknown>[])[0];
     let rawPrice = node.price ?? spec?.price;
-    if (rawPrice == null && types.includes('AggregateOffer') && node.lowPrice != null && node.lowPrice === node.highPrice) {
+    if (rawPrice == null && types.includes('AggregateOffer') && node.lowPrice != null && (opts.acceptLowPrice || node.lowPrice === node.highPrice)) {
       rawPrice = node.lowPrice;
     }
     const currency = normaliseCurrency(node.priceCurrency ?? spec?.priceCurrency);
@@ -128,7 +131,7 @@ export function resolvePrice(raw: RawPageData, target: Target, notes: string[]):
   const pageAvailability = normaliseAvailability(raw.microdata.availability ?? raw.meta.availability);
 
   // 1. JSON-LD Product/Offer
-  const offers = collectOffers(parseJsonLdBlocks(raw.jsonLd));
+  const offers = collectOffers(parseJsonLdBlocks(raw.jsonLd), { acceptLowPrice: target.priceFrom });
   if (isVariant && !target.variant?.offerMatch) {
     if (offers.length) notes.push('JSON-LD skipped: page-level offer, not specific to the selected variant');
   } else {

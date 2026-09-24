@@ -3,7 +3,7 @@ import { applyAll, applyResult, FAILURE_ALERT_THRESHOLD, HISTORY_LIMIT, pctChang
 import { buildAlert } from '../src/notify';
 import type { ScrapeResult, State, Target, TargetState } from '../src/types';
 
-const target: Target = { id: 'kef', name: 'KEF S3', retailer: 'KEF UK', url: 'https://uk.kef.com/x', group: 'B' };
+const target: Target = { id: 'kef', name: 'KEF S3', retailer: 'KEF UK', url: 'https://uk.kef.com/x', group: 'B', country: 'UK', vat: 'incl' };
 const ok = (price: number, currency = 'GBP', availability: ScrapeResult['availability'] = 'in_stock'): ScrapeResult => ({
   targetId: 'kef', status: 'ok', price, currency, availability, notes: [],
 });
@@ -113,7 +113,7 @@ describe('applyAll', () => {
 });
 
 describe('buildAlert', () => {
-  const other: Target = { id: 'nord', name: 'Nord Three', retailer: 'Nord', url: 'https://nord.example', group: 'C' };
+  const other: Target = { id: 'nord', name: 'Nord Three', retailer: 'Nord', url: 'https://nord.example', group: 'C', country: 'UK', vat: 'incl' };
 
   it('sends nothing when there are no drops or new failure alerts', () => {
     expect(buildAlert([{ type: 'rise', targetId: 'kef', oldPrice: 1, newPrice: 2, currency: 'GBP', pctRise: 100 }], [target], [])).toBeNull();

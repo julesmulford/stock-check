@@ -49,13 +49,14 @@ export function applyResult(
     ...base,
     lastPrice: price,
     currency,
+    lastGbp: result.gbp,
     availability,
     lastSuccessAt: now,
     consecutiveFailures: 0,
     failureAlerted: false,
     lastError: undefined,
   };
-  const entry = (change: HistoryEntry['change']): HistoryEntry => ({ at: now, price, currency, availability, change });
+  const entry = (change: HistoryEntry['change']): HistoryEntry => ({ at: now, price, currency, gbp: result.gbp, availability, change });
 
   if (base.lastPrice == null || !base.currency) {
     return { next: { ...ok, history: pushHistory(base.history, entry('initial')) }, event: { type: 'first', targetId: id, price, currency } };

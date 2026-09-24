@@ -1,14 +1,16 @@
 import fs from 'node:fs';
 import { chromium } from 'playwright';
 import { applyAll } from './compare';
+import { fetchGbpRates, toGbp } from './fx';
 import { buildAlert, channelsFromEnv, sendAlert } from './notify';
-import { consoleReport, markdownReport, type ReportRow } from './report';
+import { consoleReport, markdownReport, pricesTable, type ReportRow } from './report';
 import { scrapeTarget } from './scrape';
 import { loadState, saveState, STATE_PATH } from './state';
 import { targets as allTargets } from './targets';
 import type { ScrapeResult } from './types';
 
 const DELAY_BETWEEN_TARGETS_MS = Number(process.env.DELAY_MS ?? 4_000);
+const PRICES_PATH = process.env.PRICES_TABLE_FILE ?? 'PRICES.md';
 
 function parseArgs(argv: string[]) {
   const dryRun = argv.includes('--dry-run') || /^(1|true)$/i.test(process.env.DRY_RUN ?? '');
@@ -52,8 +54,14 @@ async function main() {
     await browser.close();
   }
 
+  // GBP equivalents are for display only; comparisons stay in each seller's own currency.
+  const fx = await fetchGbpRates(results.flatMap((r) => (r.currency ? [r.currency] : [])));
+  for (const r of results) if (r.price != null && r.currency) r.gbp = toGbp(r.price, r.currency, fx);
+
   // Prune against the full config so that --only runs don't drop other targets' state.
   const { state: nextState, events } = applyAll(state, allTargets, results, startedAt);
+  nextState.fx = fx ?? state.fx;
+  const prices = pricesTable(only ? targets : allTargets, nextState, results, events, { generatedAt: startedAt, fx });
   const rows: ReportRow[] = targets.map((target) => ({
     target,
     result: results.find((r) => r.targetId === target.id)!,
@@ -85,14 +93,19 @@ async function main() {
   console.log(notifySummary);
 
   if (process.env.GITHUB_STEP_SUMMARY) {
-    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, markdownReport(rows, { dryRun, startedAt }) + `\n**Notifications:** ${notifySummary}\n`);
+    fs.appendFileSync(
+      process.env.GITHUB_STEP_SUMMARY,
+      prices + '\n' + markdownReport(rows, { dryRun, startedAt }) + `\n**Notifications:** ${notifySummary}\n`,
+    );
   }
 
   if (dryRun) {
-    console.log('Dry run: state not saved.');
+    console.log(`\n${prices}\nDry run: state and ${PRICES_PATH} not saved.`);
   } else {
     saveState(nextState);
-    console.log(`Saved ${STATE_PATH}`);
+    // A partial --only run would leave other targets out of the table, so only write it for full runs.
+    if (!only) fs.writeFileSync(PRICES_PATH, prices);
+    console.log(`Saved ${STATE_PATH}${only ? '' : ` and ${PRICES_PATH}`}`);
   }
 }
 

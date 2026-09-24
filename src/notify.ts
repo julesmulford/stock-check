@@ -37,10 +37,13 @@ export function buildAlert(events: MonitorEvent[], targets: Target[], results: S
       const stock = AVAILABILITY_LABEL[resultFor(d.targetId)?.availability ?? 'unknown'];
       const oldP = formatMoney(d.oldPrice, d.currency);
       const newP = formatMoney(d.newPrice, d.currency);
-      text.push(`${t.name}`, `  Retailer: ${t.retailer}`, `  ${oldP} -> ${newP} (-${d.pctDrop}%)`, `  Stock: ${stock}`, `  ${t.url}`, '');
+      const gbp = resultFor(d.targetId)?.gbp;
+      const approx = d.currency !== 'GBP' && gbp != null ? ` (≈ ${formatMoney(gbp, 'GBP')})` : '';
+      const vat = t.vat === 'excl' ? ' + VAT' : '';
+      text.push(`${t.name}`, `  Retailer: ${t.retailer} (${t.country})`, `  ${oldP} -> ${newP}${vat}${approx} (-${d.pctDrop}%)`, `  Stock: ${stock}`, `  ${t.url}`, '');
       html.push(
-        `<li><strong>${esc(t.name)}</strong> at ${esc(t.retailer)}<br>` +
-          `<s>${esc(oldP)}</s> → <strong>${esc(newP)}</strong> (−${d.pctDrop}%)` +
+        `<li><strong>${esc(t.name)}</strong> at ${esc(t.retailer)} (${esc(t.country)})<br>` +
+          `<s>${esc(oldP)}</s> → <strong>${esc(newP)}</strong>${esc(vat + approx)} (−${d.pctDrop}%)` +
           (stock !== '—' ? ` · ${esc(stock)}` : '') +
           `<br><a href="${esc(t.url)}">${esc(t.url)}</a></li>`,
       );
