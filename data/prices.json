@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-24T11:42:39.254Z",
+  "updatedAt": "2026-09-24T12:51:50.704Z",
   "targets": {
     "smarthomesounds-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -17,11 +17,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "out_of_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "homeavdirect-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -38,11 +38,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "hbh-woolacotts-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -59,11 +59,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 649.99,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "petertyson-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -80,11 +80,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "kef-uk-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -99,13 +99,20 @@
           "currency": "GBP",
           "availability": "in_stock",
           "change": "initial"
+        },
+        {
+          "at": "2026-09-24T12:51:50.704Z",
+          "price": 699,
+          "currency": "GBP",
+          "availability": "in_stock",
+          "change": "drop"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
-      "lastPrice": 799,
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
+      "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "weybridge-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -122,30 +129,30 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "unilet-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
       "retailer": "Unilet Sound & Vision",
       "url": "https://unilet.net/product/kef-s3-floor-stands/",
-      "consecutiveFailures": 1,
+      "consecutiveFailures": 2,
       "failureAlerted": false,
       "history": [],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastError": "Blocked by the site (HTTP 403, title \"Just a moment...\")"
     },
     "hificorner-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
       "retailer": "Hi-Fi Corner",
       "url": "https://www.hificorner.co.uk/product/kef-s3-floor-stand/",
-      "consecutiveFailures": 1,
+      "consecutiveFailures": 2,
       "failureAlerted": false,
       "history": [],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastError": "Blocked by the site (HTTP 403, title \"Just a moment...\")"
     },
     "audiolounge-kef-s3-indigo": {
@@ -163,20 +170,20 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "unknown",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "made-sv045562-h01099": {
       "name": "Made.com SV045562 (H01099)",
       "retailer": "Made.com",
       "url": "https://www.made.com/style/sv045562/h01099",
-      "consecutiveFailures": 1,
+      "consecutiveFailures": 2,
       "failureAlerted": false,
       "history": [],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastError": "Blocked by the site (HTTP 403, title \"Access Denied\")"
     },
     "apollon-purifi-1et400a-st": {
@@ -194,11 +201,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "audiophonics-lpa-s400et": {
       "name": "Audiophonics LPA-S400ET Purifi 1ET400A 2x400W",
@@ -215,11 +222,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 1190,
       "currency": "EUR",
       "availability": "discontinued",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     },
     "nord-three-1et6525sa-1et400a-std": {
       "name": "Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier",
@@ -236,11 +243,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T11:42:39.254Z",
+      "lastCheckedAt": "2026-09-24T12:51:50.704Z",
       "lastPrice": 1010,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T11:42:39.254Z"
+      "lastSuccessAt": "2026-09-24T12:51:50.704Z"
     }
   }
 }
