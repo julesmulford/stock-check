@@ -9,8 +9,6 @@ const WOO_VARIATION_PRICE = [
   '.single_variation .woocommerce-variation-price .woocommerce-Price-amount',
   // Otherwise WooCommerce keeps the main product price.
   '.summary p.price .woocommerce-Price-amount',
-  '.product_infos p.price .woocommerce-Price-amount',
-  '.elementor-widget-woocommerce-product-price p.price .woocommerce-Price-amount',
 ];
 
 export const targets: Target[] = [
@@ -74,38 +72,6 @@ export const targets: Target[] = [
     },
   },
   {
-    id: 'unilet-kef-s3-indigo',
-    name: 'KEF S3 Floor Stands, Indigo Matte SE (pair)',
-    retailer: 'Unilet Sound & Vision',
-    url: 'https://unilet.net/product/kef-s3-floor-stands/',
-    group: 'B',
-    // Cloudflare blocks GitHub-hosted runners; tracked with Visualping instead (see README).
-    enabled: false,
-    variant: {
-      label: 'Indigo Matte Special Edition',
-      steps: [{ action: 'select', selector: 'select#pa_colour', value: 'indigo-matte-special-edition' }],
-    },
-    selectors: WOO_VARIATION_PRICE,
-    stockSelector: '.single_variation .woocommerce-variation-availability',
-  },
-  {
-    id: 'hificorner-kef-s3-indigo',
-    name: 'KEF S3 Floor Stands, Indigo Matte SE (pair)',
-    retailer: 'Hi-Fi Corner',
-    url: 'https://www.hificorner.co.uk/product/kef-s3-floor-stand/',
-    group: 'B',
-    // Cloudflare blocks GitHub-hosted runners; tracked with Visualping instead (see README).
-    enabled: false,
-    variant: {
-      label: 'Indigo Matte Special Edition',
-      steps: [
-        { action: 'select', selector: 'select#pa_standard_colour_options', value: 'indigo-matte-special-edition' },
-      ],
-    },
-    selectors: WOO_VARIATION_PRICE,
-    stockSelector: '.single_variation .woocommerce-variation-availability',
-  },
-  {
     id: 'audiolounge-kef-s3-indigo',
     name: 'KEF S3 Floor Stands, Indigo Matte SE (pair)',
     retailer: 'Audio Lounge',
@@ -124,16 +90,6 @@ export const targets: Target[] = [
   },
 
   // Group C: other products.
-  {
-    id: 'made-sv045562-h01099',
-    name: 'Made.com SV045562 (H01099)',
-    retailer: 'Made.com',
-    url: 'https://www.made.com/style/sv045562/h01099',
-    group: 'C',
-    // Blocked by bot protection from any connection; tracked with Visualping instead (see README).
-    enabled: false,
-    note: 'Returned HTTP 403 "Access Denied" (Akamai bot protection) when inspected. Not worked around.',
-  },
   {
     id: 'apollon-purifi-1et400a-st',
     name: 'Apollon Purifi 1ET400A ST Stereo Amplifier',

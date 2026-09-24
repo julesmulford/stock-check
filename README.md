@@ -48,7 +48,7 @@ npm ci
 npx playwright install chromium
 npm test
 npm run dry-run                                     # all targets; nothing saved or sent
-npx tsx src/main.ts --dry-run --only=kef-uk-s3-indigo,unilet-kef-s3-indigo
+npx tsx src/main.ts --dry-run --only=kef-uk-s3-indigo,audiolounge-kef-s3-indigo
 ```
 
 The dry run prints each target's price, stock, source and diagnostic notes. It also compares against the saved state and shows the email it would have sent. To send for real locally, set the same variables as the secrets and run `npm run monitor`.
@@ -78,14 +78,6 @@ The workflow commits this file after each run. That also keeps the repo active, 
 
 ## Notes on the current targets
 
-- **Switched off (`enabled: false`) and tracked with Visualping instead**:
-  - **Made.com** returns HTTP 403 "Access Denied" from its bot protection (Akamai), from home connections as well as GitHub.
-  - **Unilet** and **Hi-Fi Corner** load normally from a home connection, but Cloudflare shows GitHub's servers a "Just a moment..." challenge.
-
-  The Visualping URLs (the WooCommerce ones open with Indigo already selected):
-  - https://www.made.com/style/sv045562/h01099
-  - https://unilet.net/product/kef-s3-floor-stands/?attribute_pa_colour=indigo-matte-special-edition
-  - https://www.hificorner.co.uk/product/kef-s3-floor-stand/?attribute_pa_standard_colour_options=indigo-matte-special-edition
 - **Peter Tyson**: the generic URL is a single-colour product, "KEF S3 Floor Stands - Indigo Blue" (SKU `KEFS3STDBLUE`). No selection is needed.
 - **HBH Woolacotts** redirects to its clearance section.
 - **Audio Lounge** has one price for all colours. Its colour `<select>` is hidden behind swatch buttons, so the monitor clicks the Indigo swatch and checks that it registered.
