@@ -1,0 +1,107 @@
+export type Group = 'A' | 'B' | 'C';
+
+export type Availability =
+  | 'in_stock'
+  | 'out_of_stock'
+  | 'preorder'
+  | 'backorder'
+  | 'limited'
+  | 'discontinued'
+  | 'unknown';
+
+/** One interaction performed before reading the price, e.g. choosing a colour. */
+export type VariantStep =
+  /** Choose an option in a <select> by its value attribute. */
+  | { action: 'select'; selector: string; value: string }
+  /** Click an element (swatch, radio label, button). */
+  | { action: 'click'; selector: string }
+  /** Fail the run unless the element's value equals `value` (confirms a selection took effect). */
+  | { action: 'expectValue'; selector: string; value: string };
+
+export interface Target {
+  /** Stable key used in data/prices.json. Don't change it once the target has history. */
+  id: string;
+  name: string;
+  retailer: string;
+  url: string;
+  group: Group;
+  /** Set to false to keep a target in the file without visiting it. */
+  enabled?: boolean;
+  variant?: {
+    /** Human description shown in reports, e.g. "Indigo Matte Special Edition". */
+    label: string;
+    steps: VariantStep[];
+    /**
+     * Case-insensitive regex tested against JSON-LD offers (product name, SKU, GTIN, URL, colour).
+     * If set, a matching offer is used for the price. If not set, JSON-LD and meta tags are
+     * skipped for variant targets, because they describe the page, not the selected variant.
+     */
+    offerMatch?: string;
+  };
+  /** CSS selectors tried in order after the structured data sources. First visible match wins. */
+  selectors?: string[];
+  /** Optional CSS selector whose text describes stock, used when structured data has none. */
+  stockSelector?: string;
+  /** Optional selector for a cookie banner button, if the generic handling doesn't catch it. */
+  cookieSelector?: string;
+  /** Free text shown in reports (e.g. "Prices exclude VAT"). */
+  note?: string;
+}
+
+export type ScrapeStatus = 'ok' | 'not_found' | 'load_error' | 'blocked' | 'variant_error';
+
+export type PriceSource = 'json-ld' | 'microdata' | 'meta' | 'selector';
+
+export interface ScrapeResult {
+  targetId: string;
+  status: ScrapeStatus;
+  price?: number;
+  currency?: string;
+  availability?: Availability;
+  source?: PriceSource;
+  httpStatus?: number;
+  finalUrl?: string;
+  error?: string;
+  /** Diagnostic notes, e.g. which sources were skipped and why. */
+  notes: string[];
+}
+
+export interface HistoryEntry {
+  at: string;
+  price: number;
+  currency: string;
+  availability?: Availability;
+  change: 'initial' | 'drop' | 'rise' | 'currency' | 'stock';
+}
+
+export interface TargetState {
+  name: string;
+  retailer: string;
+  url: string;
+  lastPrice?: number;
+  currency?: string;
+  availability?: Availability;
+  lastCheckedAt?: string;
+  lastSuccessAt?: string;
+  consecutiveFailures: number;
+  /** True once a failure alert has been sent for the current failure streak. */
+  failureAlerted: boolean;
+  lastError?: string;
+  history: HistoryEntry[];
+}
+
+export interface State {
+  version: 1;
+  updatedAt?: string;
+  targets: Record<string, TargetState>;
+}
+
+export type MonitorEvent =
+  | { type: 'first'; targetId: string; price: number; currency: string }
+  | { type: 'same'; targetId: string }
+  | { type: 'drop'; targetId: string; oldPrice: number; newPrice: number; currency: string; pctDrop: number }
+  | { type: 'rise'; targetId: string; oldPrice: number; newPrice: number; currency: string; pctRise: number }
+  | { type: 'currency_changed'; targetId: string; oldCurrency: string; newCurrency: string; price: number }
+  | { type: 'failure'; targetId: string; consecutive: number; status: ScrapeStatus; error?: string }
+  | { type: 'failure_alert'; targetId: string; consecutive: number; status: ScrapeStatus; error?: string }
+  | { type: 'recovered'; targetId: string; afterFailures: number };

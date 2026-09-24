@@ -1,0 +1,27 @@
+{
+  "name": "stock-check",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daily price drop monitor using Playwright, run by GitHub Actions.",
+  "type": "module",
+  "scripts": {
+    "monitor": "tsx src/main.ts",
+    "dry-run": "tsx src/main.ts --dry-run",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.10",
+    "playwright": "^1.63.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/nodemailer": "^8.0.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}
