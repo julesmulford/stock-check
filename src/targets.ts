@@ -203,17 +203,6 @@ export const targets: Target[] = [
     note: 'Base price; input buffer, speaker terminal and 12V trigger options cost extra. 30-day trial.',
   },
   {
-    id: 'vtv-purifi-1et400a-stereo',
-    name: 'VTV Stereo Purifi 1ET400A Amplifier',
-    retailer: 'VTV Amplifier',
-    url: 'https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et400a-amplifier/',
-    group: 'C',
-    country: 'USA',
-    vat: 'excl',
-    priceFrom: true,
-    note: 'Base price; input buffer, speaker terminal and 12V trigger options cost extra. 30-day trial.',
-  },
-  {
     id: 'buckeye-purifi-1et6525sa-2ch',
     name: 'Buckeye Purifi 1ET6525SA 2-Channel Amplifier',
     retailer: 'Buckeye Amps',
