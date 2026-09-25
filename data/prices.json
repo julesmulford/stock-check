@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-24T15:32:24.321Z",
+  "updatedAt": "2026-09-25T08:04:22.066Z",
   "targets": {
     "smarthomesounds-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -17,12 +17,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "out_of_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 699
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 699,
+      "originalPrice": 699,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "homeavdirect-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -39,12 +42,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 649
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 649,
+      "originalPrice": 649,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "hbh-woolacotts-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -61,12 +67,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 649.99,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 649.99
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 649.99,
+      "originalPrice": 649.99,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "petertyson-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -83,12 +92,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 699
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 699,
+      "originalPrice": 699,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "kef-uk-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -112,12 +124,15 @@
           "change": "drop"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 699
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 699,
+      "originalPrice": 699,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "weybridge-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -134,12 +149,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 699
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 699,
+      "originalPrice": 699,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "audiolounge-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -156,12 +174,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "unknown",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 649
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 649,
+      "originalPrice": 649,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "apollon-purifi-1et400a-st": {
       "name": "Apollon Purifi 1ET400A ST Stereo Amplifier",
@@ -178,12 +199,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 937.23
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 937.23,
+      "originalPrice": 1090,
+      "originalCurrency": "EUR",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "nord-three-1et6525sa-1et400a-std": {
       "name": "Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier",
@@ -200,12 +224,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1010,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z",
-      "lastGbp": 1010
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "lastGbp": 1010,
+      "originalPrice": 1010,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T11:42:39.254Z"
     },
     "dougbrady-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -223,12 +250,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 699,
       "currency": "GBP",
       "lastGbp": 699,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 699,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "hifisound-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -246,12 +276,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 699,
       "currency": "GBP",
       "lastGbp": 699,
       "availability": "unknown",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 699,
+      "originalCurrency": "GBP",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "apollon-purifi-1et6525sa-st": {
       "name": "Apollon Purifi 1ET6525SA ST Stereo Amplifier",
@@ -269,12 +302,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "lastGbp": 937.23,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 1090,
+      "originalCurrency": "EUR",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "audiophonics-lpa-s450et": {
       "name": "Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W",
@@ -292,12 +328,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1290,
       "currency": "EUR",
       "lastGbp": 1109.2,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 1290,
+      "originalCurrency": "EUR",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "audiophonics-hpa-s450et": {
       "name": "Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W",
@@ -315,12 +354,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1490,
       "currency": "EUR",
       "lastGbp": 1281.17,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 1490,
+      "originalCurrency": "EUR",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "vtv-purifi-1et6525sa-stereo": {
       "name": "VTV Stereo Purifi 1ET6525SA Amplifier",
@@ -338,35 +380,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1150,
       "currency": "USD",
       "lastGbp": 869.89,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
-    },
-    "vtv-purifi-1et400a-stereo": {
-      "name": "VTV Stereo Purifi 1ET400A Amplifier",
-      "retailer": "VTV Amplifier",
-      "url": "https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et400a-amplifier/",
-      "consecutiveFailures": 0,
-      "failureAlerted": false,
-      "history": [
-        {
-          "at": "2026-09-24T15:18:00.987Z",
-          "price": 1050,
-          "currency": "USD",
-          "gbp": 794.25,
-          "availability": "out_of_stock",
-          "change": "initial"
-        }
-      ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
-      "lastPrice": 1050,
-      "currency": "USD",
-      "lastGbp": 794.25,
-      "availability": "out_of_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 1150,
+      "originalCurrency": "USD",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "buckeye-purifi-1et6525sa-2ch": {
       "name": "Buckeye Purifi 1ET6525SA 2-Channel Amplifier",
@@ -384,12 +406,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1195,
       "currency": "USD",
       "lastGbp": 903.93,
       "availability": "unknown",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 1195,
+      "originalCurrency": "USD",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "maroon-m6525-stereo": {
       "name": "Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier",
@@ -407,12 +432,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-09-24T15:32:24.321Z",
+      "lastCheckedAt": "2026-09-25T08:04:22.066Z",
       "lastPrice": 1060,
       "currency": "USD",
       "lastGbp": 801.82,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-09-24T15:32:24.321Z"
+      "lastSuccessAt": "2026-09-25T08:04:22.066Z",
+      "originalPrice": 1060,
+      "originalCurrency": "USD",
+      "originalAt": "2026-09-24T15:18:00.987Z"
     }
   },
   "fx": {
