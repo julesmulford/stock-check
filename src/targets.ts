@@ -301,19 +301,4 @@ export const targets: Target[] = [
       offerMatch: 'variant=44233925066985',
     },
   },
-  {
-    id: 'hificorner-svs-sb1000pro-black-ash',
-    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
-    retailer: 'Hi-Fi Corner',
-    url: 'https://www.hificorner.co.uk/product/svs-sb-1000-pro-subwoofer/',
-    group: 'D',
-    country: 'UK',
-    vat: 'incl',
-    variant: {
-      label: 'Black Ash',
-      steps: [{ action: 'select', selector: 'select#pa_finish', value: 'blackash' }],
-    },
-    selectors: [...WOO_VARIATION_PRICE, '.elementor-widget-woocommerce-product-price p.price .woocommerce-Price-amount'],
-    stockSelector: '.single_variation .woocommerce-variation-availability',
-  },
 ];
