@@ -1,5 +1,5 @@
 import { AVAILABILITY_LABEL, formatMoney } from './price';
-import type { MonitorEvent, ScrapeResult, Target } from './types';
+import type { ExDemoPage, ExDemoPageResult, MonitorEvent, ScrapeResult, Target } from './types';
 
 export interface ReportRow {
   target: Target;
@@ -86,6 +86,44 @@ export function consoleReport(rows: ReportRow[]): string {
     describeChange(event) || (result.error ?? ''),
   ]);
   const header = ['#', 'Grp', 'Retailer', 'Status', 'Price', 'Stock', 'Source', 'Change / error'];
+  const widths = header.map((h, c) => Math.max(h.length, ...data.map((row) => row[c].length)));
+  const fmt = (row: string[]) => row.map((cell, c) => cell.padEnd(widths[c])).join('  ');
+  return [fmt(header), widths.map((w) => '-'.repeat(w)).join('  '), ...data.map(fmt)].join('\n');
+}
+
+const EXDEMO_STATUS_LABEL: Record<ExDemoPageResult['status'], string> = {
+  ok: 'OK',
+  blocked: 'Blocked by site',
+  load_error: 'Load failed',
+  grid_not_found: 'Listings not found',
+  filter_not_applied: 'Filter not applied',
+};
+
+function exDemoRows(pages: ExDemoPage[], results: ExDemoPageResult[]) {
+  return results.map((r) => {
+    const page = pages.find((p) => p.id === r.pageId)!;
+    return {
+      page,
+      status: EXDEMO_STATUS_LABEL[r.status],
+      listings: r.status === 'ok' ? String(r.itemCount) : '—',
+      matches: r.status === 'ok' ? String(r.matches.length) : '—',
+      notes: [r.error, ...r.notes].filter(Boolean).join('; '),
+    };
+  });
+}
+
+/** Ex-demo pages for the job summary: one row per page checked. */
+export function exDemoMarkdownReport(pages: ExDemoPage[], results: ExDemoPageResult[]): string {
+  const lines = ['### Ex demo pages', '', '| Retailer | Page | Status | Listings | SB-1000 Pro | Notes |', '|---|---|---|---|---|---|'];
+  for (const r of exDemoRows(pages, results)) {
+    lines.push(`| ${escapeCell(r.page.retailer)} | [${escapeCell(r.page.label)}](${r.page.url}) | ${r.status} | ${r.listings} | ${r.matches} | ${escapeCell(r.notes)} |`);
+  }
+  return lines.join('\n') + '\n';
+}
+
+export function exDemoConsoleReport(pages: ExDemoPage[], results: ExDemoPageResult[]): string {
+  const data = exDemoRows(pages, results).map((r) => [r.page.retailer, r.page.label, r.status, r.listings, r.matches]);
+  const header = ['Ex-demo retailer', 'Page', 'Status', 'Listings', 'SB-1000 Pro'];
   const widths = header.map((h, c) => Math.max(h.length, ...data.map((row) => row[c].length)));
   const fmt = (row: string[]) => row.map((cell, c) => cell.padEnd(widths[c])).join('  ');
   return [fmt(header), widths.map((w) => '-'.repeat(w)).join('  '), ...data.map(fmt)].join('\n');

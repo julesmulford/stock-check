@@ -1,7 +1,20 @@
 import { pctChange } from './compare';
+import { EXDEMO_MODEL } from './exdemo';
 import { AVAILABILITY_LABEL, formatMoney, round2 } from './price';
 import { STATUS_LABEL } from './report';
-import type { FxRates, Group, MonitorEvent, ScrapeResult, State, Target, TargetState } from './types';
+import type {
+  ExDemoEvent,
+  ExDemoPage,
+  ExDemoPageResult,
+  ExDemoState,
+  FxRates,
+  Group,
+  MonitorEvent,
+  ScrapeResult,
+  State,
+  Target,
+  TargetState,
+} from './types';
 
 export const UK_VAT_RATE = 0.2;
 
@@ -45,10 +58,81 @@ export interface PriceSection {
   rows: PriceRow[];
 }
 
+export interface ExDemoRow {
+  retailer: string;
+  page: string;
+  title: string;
+  url: string;
+  condition: string;
+  price: string;
+  firstSeen: string;
+  today: string;
+  kind: 'found' | 'cheaper' | 'same';
+}
+
+export interface ExDemoBlock {
+  title: string;
+  /** Matching listings currently on their pages, cheapest first. */
+  rows: ExDemoRow[];
+  pagesChecked: number;
+  /** Pages that couldn't be read this run, e.g. "Nintronics Bargains: blocked by site". */
+  problems: string[];
+}
+
 export interface PriceTable {
   generatedAt: string;
   sections: PriceSection[];
+  exdemo?: ExDemoBlock;
   notes: string[];
+}
+
+export interface ExDemoInput {
+  pages: ExDemoPage[];
+  state: ExDemoState;
+  results: ExDemoPageResult[];
+  events: ExDemoEvent[];
+}
+
+const EXDEMO_STATUS: Record<ExDemoPageResult['status'], string> = {
+  ok: 'OK',
+  blocked: 'blocked by site',
+  load_error: 'failed to load',
+  grid_not_found: 'listings not found (page layout may have changed)',
+  filter_not_applied: 'brand filter not applied',
+};
+
+export function buildExDemoBlock(input: ExDemoInput): ExDemoBlock {
+  const listed = Object.values(input.state.listings)
+    .filter((l) => l.listed && input.pages.some((p) => p.id === l.pageId))
+    .sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity));
+  const rows = listed.map((l): ExDemoRow => {
+    const page = input.pages.find((p) => p.id === l.pageId)!;
+    const event = input.events.find((e) => (e.type === 'found' || e.type === 'cheaper') && e.listing.key === l.key);
+    let today = '–';
+    let kind: ExDemoRow['kind'] = 'same';
+    if (event?.type === 'found') [today, kind] = ['new', 'found'];
+    if (event?.type === 'cheaper' && l.price != null && l.currency) {
+      [today, kind] = [`↓ ${formatMoney(event.oldPrice - l.price, l.currency)} (−${-pctChange(event.oldPrice, l.price)}%)`, 'cheaper'];
+    }
+    return {
+      retailer: l.retailer,
+      page: page.label,
+      title: l.title,
+      url: l.url,
+      condition: l.condition ?? '—',
+      price: l.price != null && l.currency ? formatMoney(l.price, l.currency) : '—',
+      firstSeen: ukDate(l.firstSeenAt),
+      today,
+      kind,
+    };
+  });
+  const problems = input.results
+    .filter((r) => r.status !== 'ok')
+    .map((r) => {
+      const p = input.pages.find((x) => x.id === r.pageId)!;
+      return `${p.retailer} ${p.label}: ${EXDEMO_STATUS[r.status]}`;
+    });
+  return { title: `Ex demo watch: ${EXDEMO_MODEL}`, rows, pagesChecked: input.results.length, problems };
 }
 
 /** GBP price with UK VAT: adds 20% for prices shown without VAT. */
@@ -99,7 +183,7 @@ export function buildPriceTable(
   state: State,
   results: ScrapeResult[],
   events: MonitorEvent[],
-  opts: { generatedAt: string; fx: FxRates | null },
+  opts: { generatedAt: string; fx: FxRates | null; exdemo?: ExDemoInput },
 ): PriceTable {
   const sections: PriceSection[] = [];
   for (const section of SECTIONS) {
@@ -147,6 +231,7 @@ export function buildPriceTable(
   return {
     generatedAt: opts.generatedAt,
     sections,
+    exdemo: opts.exdemo ? buildExDemoBlock(opts.exdemo) : undefined,
     notes: [
       rates,
       '"+ VAT" prices are from sellers outside the UK that show prices without VAT. "Incl. UK VAT" adds the 20% import VAT you would pay on delivery. It does not include shipping, customs duty or courier fees.',
@@ -194,8 +279,29 @@ export function priceTableMarkdown(t: PriceTable): string {
     }
     out.push('');
   }
+  if (t.exdemo) {
+    const x = t.exdemo;
+    out.push(`## ${x.title}`, '', exDemoSummary(x), '');
+    if (x.rows.length) {
+      out.push('| Retailer | Listing | Condition | Price | First seen | Today |', '|---|---|---|---|---|---|');
+      for (const r of x.rows) {
+        const today = r.kind === 'same' ? r.today : `**${md(r.today)}**`;
+        out.push(`| ${md(r.retailer)} (${md(r.page)}) | [${md(r.title)}](${r.url}) | ${md(r.condition)} | ${md(r.price)} | ${r.firstSeen} | ${today} |`);
+      }
+      out.push('');
+    }
+  }
   out.push('---', '', ...t.notes.map((n) => `- ${n}`), '');
   return out.join('\n');
+}
+
+function exDemoSummary(x: ExDemoBlock): string {
+  const pages = `${x.pagesChecked} clearance / ex-demo page${x.pagesChecked === 1 ? '' : 's'} checked`;
+  const found = x.rows.length
+    ? `${x.rows.length} SB-1000 Pro listing${x.rows.length === 1 ? '' : 's'} currently on them.`
+    : 'No SB-1000 Pro listings on them.';
+  const problems = x.problems.length ? ` Couldn't check: ${x.problems.join('; ')}.` : '';
+  return `${pages}. ${found}${problems}`;
 }
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -225,6 +331,21 @@ export function priceTableHtml(t: PriceTable): string {
     }
     out.push('</table>');
   }
+  if (t.exdemo) {
+    const x = t.exdemo;
+    out.push(`<h3 style="margin:24px 0 8px">${esc(x.title)}</h3>`, `<p style="color:#555">${esc(exDemoSummary(x))}</p>`);
+    if (x.rows.length) {
+      const headers = ['Retailer', 'Listing', 'Condition', 'Price', 'First seen', 'Today'];
+      out.push('<table style="border-collapse:collapse;font-size:14px">', `<tr>${headers.map((h) => `<th style="${cell}background:#f3f3f3">${h}</th>`).join('')}</tr>`);
+      for (const r of x.rows) {
+        const bg = r.kind === 'same' ? '' : 'background:#e6f4ea;';
+        const today = r.kind === 'same' ? esc(r.today) : `<strong>${esc(r.today)}</strong>`;
+        const cells = [`${esc(r.retailer)} (${esc(r.page)})`, `<a href="${esc(r.url)}">${esc(r.title)}</a>`, esc(r.condition), esc(r.price), esc(r.firstSeen), today];
+        out.push(`<tr>${cells.map((c) => `<td style="${cell}${bg}">${c}</td>`).join('')}</tr>`);
+      }
+      out.push('</table>');
+    }
+  }
   out.push(`<ul style="color:#555;font-size:13px">${t.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>`);
   return out.join('\n');
 }
@@ -240,6 +361,15 @@ export function priceTableText(t: PriceTable): string {
       const change = r.kind === 'same' ? '' : ` · ${r.today}`;
       const since = r.sinceKind === 'down' || r.sinceKind === 'up' ? ` · since original ${r.original}: ${r.sinceOriginal}` : '';
       out.push(`  ${lead}  ${what} (${r.country}) · ${r.stock}${change}${since}`);
+    }
+    out.push('');
+  }
+  if (t.exdemo) {
+    const x = t.exdemo;
+    out.push(x.title.toUpperCase(), `  ${exDemoSummary(x)}`);
+    for (const r of x.rows) {
+      const change = r.kind === 'same' ? '' : ` · ${r.today}`;
+      out.push(`  ${r.price}  ${r.title} (${r.condition}), ${r.retailer} ${r.page} · first seen ${r.firstSeen}${change}`, `    ${r.url}`);
     }
     out.push('');
   }

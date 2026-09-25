@@ -121,7 +121,88 @@ export interface State {
   /** Exchange rates used for the latest run's GBP conversions. */
   fx?: FxRates;
   targets: Record<string, TargetState>;
+  exdemo?: ExDemoState;
 }
+
+/** A clearance / ex-demo listing page to search for a model, already filtered to one brand. */
+export interface ExDemoPage {
+  id: string;
+  retailer: string;
+  /** Which of the retailer's pages this is, e.g. "Clearance". */
+  label: string;
+  url: string;
+  /** Every listing on the filtered page must mention this brand, or the filter hasn't applied. */
+  brand: string;
+  /** One element per product listing. */
+  cardSelector: string;
+  /** Within a card. */
+  titleSelector: string;
+  /** Within a card; defaults to the first link. */
+  linkSelector?: string;
+  /** Within a card, tried in order; the first visible one with a price wins. */
+  priceSelectors: string[];
+  /** Elements to ignore inside the price element, e.g. a crossed-out old price. */
+  priceExclude?: string;
+  /** Shown when the page has no products: a selector, and/or a regex for the page text. */
+  emptySelector?: string;
+  emptyText?: string;
+  /** Condition to record when a listing doesn't state one, e.g. on an ex-demo-only page. */
+  defaultCondition?: string;
+}
+
+export interface ExDemoListing {
+  /** The listing URL without query string; identifies the unit across runs and pages. */
+  key: string;
+  title: string;
+  price?: number;
+  currency?: string;
+  condition?: string;
+  url: string;
+}
+
+export type ExDemoStatus = 'ok' | 'blocked' | 'load_error' | 'grid_not_found' | 'filter_not_applied';
+
+export interface ExDemoPageResult {
+  pageId: string;
+  status: ExDemoStatus;
+  /** Listings on the page (any model). */
+  itemCount: number;
+  /** Listings matching the watched model. */
+  matches: ExDemoListing[];
+  error?: string;
+  notes: string[];
+}
+
+export interface ExDemoPageState {
+  consecutiveFailures: number;
+  failureAlerted: boolean;
+  lastCheckedAt?: string;
+  lastSuccessAt?: string;
+  lastError?: string;
+  lastItemCount?: number;
+}
+
+export interface ExDemoListingState extends ExDemoListing {
+  pageId: string;
+  retailer: string;
+  firstSeenAt: string;
+  lastSeenAt: string;
+  /** Whether the listing was on its page at the last successful check of that page. */
+  listed: boolean;
+}
+
+export interface ExDemoState {
+  pages: Record<string, ExDemoPageState>;
+  /** Every matching listing seen, keyed by `ExDemoListing.key`, so a unit is only reported once. */
+  listings: Record<string, ExDemoListingState>;
+}
+
+export type ExDemoEvent =
+  | { type: 'found'; listing: ExDemoListingState }
+  | { type: 'cheaper'; listing: ExDemoListingState; oldPrice: number }
+  | { type: 'page_failure'; pageId: string; consecutive: number; status: ExDemoStatus; error?: string }
+  | { type: 'page_failure_alert'; pageId: string; consecutive: number; status: ExDemoStatus; error?: string }
+  | { type: 'page_recovered'; pageId: string; afterFailures: number };
 
 /** Units of each currency per 1 GBP, from the ECB reference rates published on `date`. */
 export interface FxRates {

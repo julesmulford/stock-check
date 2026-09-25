@@ -2,13 +2,13 @@ import type { BrowserContext, Page } from 'playwright';
 import { resolvePrice, type RawPageData } from './extract';
 import type { ScrapeResult, Target, VariantStep } from './types';
 
-const NAV_TIMEOUT = 45_000;
+export const NAV_TIMEOUT = 45_000;
 const IDLE_TIMEOUT = 10_000;
 const STEP_TIMEOUT = 15_000;
 
 /** Page titles and statuses that indicate bot protection rather than a broken page. */
-const BLOCK_TITLE = /access denied|just a moment|attention required|are you a robot|verify you are human|captcha|request blocked|pardon our interruption/i;
-const BLOCK_STATUSES = new Set([401, 403, 429]);
+export const BLOCK_TITLE = /access denied|just a moment|attention required|are you a robot|verify you are human|captcha|request blocked|pardon our interruption/i;
+export const BLOCK_STATUSES = new Set([401, 403, 429]);
 
 /**
  * Buttons that dismiss a cookie banner. Reject/essential-only options are tried first,
@@ -19,7 +19,7 @@ const COOKIE_BUTTON_NAMES = [
   /^(accept|accept all|accept all cookies|accept cookies|allow all|allow all cookies|i agree|agree|agree and close|got it)$/i,
 ];
 
-async function settle(page: Page, extraMs = 0) {
+export async function settle(page: Page, extraMs = 0) {
   await page.waitForLoadState('networkidle', { timeout: IDLE_TIMEOUT }).catch(() => {});
   if (extraMs) await page.waitForTimeout(extraMs);
 }
@@ -164,6 +164,6 @@ export async function scrapeTarget(context: BrowserContext, target: Target): Pro
   }
 }
 
-function errMsg(err: unknown): string {
+export function errMsg(err: unknown): string {
   return (err instanceof Error ? err.message : String(err)).split('\n')[0].slice(0, 200);
 }

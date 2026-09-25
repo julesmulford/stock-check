@@ -20,6 +20,23 @@ Once a day, a GitHub Actions workflow visits each product page in [src/targets.t
 
 The conversion columns only appear in a section that has foreign or ex-VAT prices. Price drops are always measured in each seller's own currency, so exchange-rate moves never trigger an alert.
 
+## Ex demo watch
+
+As well as the price targets, each run checks the clearance and ex-demo pages in [src/exdemo.ts](src/exdemo.ts). Each page is already filtered to SVS, and the monitor looks for any listing whose title is an **SB-1000 Pro**: "SB-1000 Pro", "SB1000 Pro" or "SB 1000 Pro", in any case. The plain SB-1000 and other SVS models are ignored.
+
+- **Waiting for the page.** Some of these pages apply their filter with JavaScript after loading. The monitor waits until the list of products stops changing, and needs to see either listings or the shop's own "no products" message. A page with neither counts as a failure, because the layout has probably changed.
+- **Checking the filter.** If any listing isn't SVS, the filter hasn't applied. That also counts as a failure, and nothing on the page is read.
+- **No products.** A page with no products counts as nothing found, not an error. A page that fails three runs in a row is listed under "Broken targets" in the email.
+- **What's recorded.** For each matching listing: its title, price, condition and URL. The condition is ex demo, B grade, open box, nearly new, pre-owned and so on, taken from the title or listing if shown, otherwise from the page (e.g. "Ex demo" on an ex-demo-only page).
+- **Alerts.** The daily email puts an **"Ex demo SB-1000 Pro found"** section at the top, and leads its subject with it, when a listing appears that has never been seen before, or when a listing already seen is cheaper than last time. Listings are stored in `data/prices.json` (under `exdemo`), keyed by their URL, so the same unit is never reported twice. That includes a unit that disappears for a while and comes back at the same price. Units not seen for 180 days are forgotten.
+- **Table.** An "Ex demo watch" section at the end of the prices table lists any SB-1000 Pro currently on those pages, or says there are none, and names any page that couldn't be checked.
+
+Pages checked: Home AV Direct clearance and ex-demo, Nintronics bargains, and Peter Tyson clearance (speakers). Two pages from the original list aren't included, because their bot protection (Cloudflare) blocks the monitor. Check them with Visualping instead:
+- Audio Affair, blocked even from a home connection: https://www.audioaffair.co.uk/sale/ex-demo-graded?manufacturer=SVS
+- Hi-Fi Corner, blocked from GitHub: https://www.hificorner.co.uk/product-category/clearance/?_brands=svs
+
+To add a page, add an entry to `exDemoPages` in [src/exdemo.ts](src/exdemo.ts): the listing card, title, link and price selectors, and the page's "no products" element or text. Then run `npx tsx src/main.ts --dry-run --only=<page id>`.
+
 ## How prices are read
 
 For each page the monitor dismisses any cookie banner, runs the target's variant steps if it has any (for example, choosing Indigo in a colour selector), and then takes the price from the first source that works:

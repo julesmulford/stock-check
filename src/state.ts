@@ -7,7 +7,8 @@ export const STATE_PATH = path.resolve(process.env.PRICES_FILE ?? 'data/prices.j
 export function loadState(file = STATE_PATH): State {
   if (!fs.existsSync(file)) return { version: 1, targets: {} };
   const parsed = JSON.parse(fs.readFileSync(file, 'utf8')) as State;
-  return { version: 1, updatedAt: parsed.updatedAt, fx: parsed.fx, targets: parsed.targets ?? {} };
+  // Keep every saved section (fx, exdemo, ...), so a new one can't be dropped by accident.
+  return { ...parsed, version: 1, targets: parsed.targets ?? {} };
 }
 
 export function saveState(state: State, file = STATE_PATH): void {
