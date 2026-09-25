@@ -23,6 +23,8 @@ const FORGET_AFTER_DAYS = 180;
  *   https://www.audioaffair.co.uk/sale/ex-demo-graded?manufacturer=SVS
  * - Hi-Fi Corner clearance (blocked from GitHub):
  *   https://www.hificorner.co.uk/product-category/clearance/?_brands=svs
+ * - Peter Tyson clearance, speakers (blocked from GitHub, though its product pages are not):
+ *   https://petertyson.co.uk/clearance/all-clearance/speakers?clearance_condition=1837,1836&manufacturer=777&product_list_limit=36
  */
 export const exDemoPages: ExDemoPage[] = [
   {
@@ -65,20 +67,6 @@ export const exDemoPages: ExDemoPage[] = [
     priceSelectors: ['.price__sale .price-item--sale', '.price__regular .price-item--regular'],
     emptySelector: '.collection--empty',
     emptyText: 'No products found',
-  },
-  {
-    id: 'petertyson-clearance-svs-speakers',
-    retailer: 'Peter Tyson',
-    label: 'Clearance',
-    url: 'https://petertyson.co.uk/clearance/all-clearance/speakers?clearance_condition=1837,1836&manufacturer=777&product_list_limit=36',
-    brand: 'SVS',
-    cardSelector: '.item.product',
-    titleSelector: 'a.product-item-link',
-    linkSelector: 'a.product-item-link',
-    // The public price, not the members-only "PT VIP" price.
-    priceSelectors: ['[data-price-type="finalPrice"] .price'],
-    emptySelector: '.message.info.empty',
-    emptyText: "can.t find products matching",
   },
 ];
 

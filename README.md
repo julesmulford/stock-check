@@ -31,9 +31,10 @@ As well as the price targets, each run checks the clearance and ex-demo pages in
 - **Alerts.** The daily email puts an **"Ex demo SB-1000 Pro found"** section at the top, and leads its subject with it, when a listing appears that has never been seen before, or when a listing already seen is cheaper than last time. Listings are stored in `data/prices.json` (under `exdemo`), keyed by their URL, so the same unit is never reported twice. That includes a unit that disappears for a while and comes back at the same price. Units not seen for 180 days are forgotten.
 - **Table.** An "Ex demo watch" section at the end of the prices table lists any SB-1000 Pro currently on those pages, or says there are none, and names any page that couldn't be checked.
 
-Pages checked: Home AV Direct clearance and ex-demo, Nintronics bargains, and Peter Tyson clearance (speakers). Two pages from the original list aren't included, because their bot protection (Cloudflare) blocks the monitor. Check them with Visualping instead:
+Pages checked: Home AV Direct clearance and ex-demo, and Nintronics bargains. Three pages from the original list aren't included, because their bot protection (Cloudflare) blocks the monitor. Check them with Visualping instead:
 - Audio Affair, blocked even from a home connection: https://www.audioaffair.co.uk/sale/ex-demo-graded?manufacturer=SVS
 - Hi-Fi Corner, blocked from GitHub: https://www.hificorner.co.uk/product-category/clearance/?_brands=svs
+- Peter Tyson clearance (speakers), blocked from GitHub even though its product pages load: https://petertyson.co.uk/clearance/all-clearance/speakers?clearance_condition=1837,1836&manufacturer=777&product_list_limit=36
 
 To add a page, add an entry to `exDemoPages` in [src/exdemo.ts](src/exdemo.ts): the listing card, title, link and price selectors, and the page's "no products" element or text. Then run `npx tsx src/main.ts --dry-run --only=<page id>`.
 
