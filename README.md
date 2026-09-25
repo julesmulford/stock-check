@@ -1,6 +1,6 @@
 # Price drop monitor
 
-Once a day, a GitHub Actions workflow visits each product page in [src/targets.ts](src/targets.ts). It reads the price and stock status, compares them with the last recorded price in [data/prices.json](data/prices.json), and sends an email when a price has dropped. It also sends an email if a target fails three runs in a row, because that usually means a page or selector has changed.
+Once a day, a GitHub Actions workflow visits each product page in [src/targets.ts](src/targets.ts). It reads the price and stock status, compares them with the last recorded price in [data/prices.json](data/prices.json), and emails you the full prices table, with any price drop highlighted at the top. The email also flags any target that has failed three runs in a row, because that usually means a page or selector has changed.
 
 - Runs every day at 06:17 UTC, which is 07:17 UK time in summer and 06:17 in winter, and on demand from the Actions tab. It's scheduled off the hour because GitHub delays, and at busy times skips, runs scheduled on the hour. Even so, scheduled runs can start late.
 - Visits pages one at a time with a pause between them, using an ordinary desktop Chromium. It doesn't work around bot protection: blocked sites are flagged in the run summary.
@@ -9,7 +9,7 @@ Once a day, a GitHub Actions workflow visits each product page in [src/targets.t
 
 ## The daily prices table
 
-[PRICES.md](PRICES.md) has one section for the stands and one for the amplifiers. Each is sorted cheapest first. For each item it shows:
+[PRICES.md](PRICES.md) has a section per product: the stands, the amplifiers and the SVS subwoofer. Each is sorted cheapest first. For each item it shows:
 
 - **Retailer** (linked to the product page) and **Country** the seller is in.
 - **Price** in the seller's own currency. "+ VAT" marks sellers outside the UK that show prices without VAT.
@@ -72,7 +72,7 @@ The dry run prints each target's price, stock, source and diagnostic notes. It a
 
 Edit [src/targets.ts](src/targets.ts).
 
-- **Add**: append an entry with a unique `id`, a `name`, `retailer`, `url`, `group` (`A` or `B` for the stands, `C` for the amplifiers), `country`, and `vat` (`'incl'` if the price includes VAT, which UK prices always do; `'excl'` if not). Run `npx tsx src/main.ts --dry-run --only=<id>` and check the price and source.
+- **Add**: append an entry with a unique `id`, a `name`, `retailer`, `url`, `group` (`A` or `B` for the stands, `C` for the amplifiers, `D` for the subwoofer; a new product needs a new group and a section in [src/prices-table.ts](src/prices-table.ts)), `country`, and `vat` (`'incl'` if the price includes VAT, which UK prices always do; `'excl'` if not). Run `npx tsx src/main.ts --dry-run --only=<id>` and check the price and source.
   - If the page covers several variants, add `variant.steps`. These can be `select` (a `<select>` value), `click` (a swatch or label) or `expectValue` (confirms that a selection took effect). If the page's JSON-LD lists each variant separately, set `variant.offerMatch` to a regex matching that variant's SKU or GTIN. If it doesn't, add `selectors` for the displayed price.
   - If the structured data is missing or wrong, add `selectors` (and optionally a `stockSelector`).
   - If a cookie banner isn't dismissed automatically, set `cookieSelector` to the button that closes it.
@@ -113,3 +113,4 @@ The workflow commits this file after each run. That also keeps the repo active, 
   - 5-year warranty +15%
 
   A rackmount front (standard case only) is also offered, with no surcharge shown.
+- **SVS SB-1000 Pro subwoofer**: tracked in **Black Ash** everywhere, since the gloss finishes cost £100 more. Home AV Direct and Peter Tyson have a separate Black Ash product page. At Home Media, Premium Sound, Nintronics and Hi-Fi Corner the monitor selects Black Ash first. Nintronics's page data names its colours only by variant ID, so Black Ash is matched by that ID (`44233925066985`). **Audio Affair** isn't tracked, because its bot protection (Cloudflare) blocks automated visits even from a home connection.

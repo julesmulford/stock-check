@@ -1,4 +1,4 @@
-export type Group = 'A' | 'B' | 'C';
+export type Group = 'A' | 'B' | 'C' | 'D';
 
 export type Availability =
   | 'in_stock'

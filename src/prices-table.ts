@@ -8,6 +8,7 @@ export const UK_VAT_RATE = 0.2;
 const SECTIONS: Array<{ title: string; groups: Group[] }> = [
   { title: 'KEF S3 Floor Stands, Indigo (pair)', groups: ['A', 'B'] },
   { title: 'Purifi stereo amplifiers', groups: ['C'] },
+  { title: 'SVS SB-1000 Pro subwoofer, Black Ash', groups: ['D'] },
 ];
 
 export const ukDateTime = (iso: string) =>

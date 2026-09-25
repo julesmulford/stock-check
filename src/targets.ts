@@ -225,4 +225,95 @@ export const targets: Target[] = [
     priceFrom: true,
     note: 'Standard Edition; the Luxury Edition is $1,600. Shipping $70; import VAT and duty are extra.',
   },
+
+  // Group D: SVS SB-1000 Pro subwoofer, Black Ash (the gloss finishes cost £100 more).
+  {
+    id: 'homeavdirect-svs-sb1000pro-black-ash',
+    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
+    retailer: 'Home AV Direct',
+    // A separate product page per colour.
+    url: 'https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash',
+    group: 'D',
+    country: 'UK',
+    vat: 'incl',
+  },
+  {
+    id: 'petertyson-svs-sb1000pro-black-ash',
+    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
+    retailer: 'Peter Tyson',
+    // Despite the generic URL this is the Black Ash product (SKU SB1000PROBLK).
+    url: 'https://petertyson.co.uk/svs-sb-1000-pro-subwoofer',
+    group: 'D',
+    country: 'UK',
+    vat: 'incl',
+  },
+  {
+    id: 'homemedia-svs-sb1000pro-black-ash',
+    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
+    retailer: 'Home Media',
+    url: 'https://www.homemedialimited.co.uk/product/svs-sb-1000-pro-subwoofer/',
+    group: 'D',
+    country: 'UK',
+    vat: 'incl',
+    variant: {
+      label: 'Black Ash',
+      // The real <select> is hidden behind a visible copy; choose in the copy, then confirm.
+      steps: [
+        { action: 'select', selector: 'form.variations_form select:not(#pa_finish)', value: 'black-ash' },
+        { action: 'expectValue', selector: 'select#pa_finish', value: 'black-ash' },
+      ],
+    },
+    selectors: WOO_VARIATION_PRICE,
+    stockSelector: '.single_variation .woocommerce-variation-availability',
+  },
+  {
+    id: 'premiumsound-svs-sb1000pro-black-ash',
+    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
+    retailer: 'Premium Sound',
+    url: 'https://premiumsound.co.uk/product/speakers/subwoofers/svs-sb1000-pro/',
+    group: 'D',
+    country: 'UK',
+    vat: 'incl',
+    variant: {
+      label: 'Black Ash',
+      // Colour radio buttons in front of a hidden <select>.
+      steps: [
+        { action: 'click', selector: 'label:has(input[type="radio"][value="black-ash"]), input[type="radio"][value="black-ash"]' },
+        { action: 'expectValue', selector: 'select#pa_colour', value: 'black-ash' },
+      ],
+    },
+    // The theme's own price block replaces WooCommerce's.
+    selectors: ['#x-product-price p.price .woocommerce-Price-amount'],
+    stockSelector: '.single_variation .woocommerce-variation-availability',
+  },
+  {
+    id: 'nintronics-svs-sb1000pro-black-ash',
+    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
+    retailer: 'Nintronics',
+    url: 'https://nintronics.co.uk/products/svs-sb-1000-pro-subwoofer',
+    group: 'D',
+    country: 'UK',
+    vat: 'incl',
+    variant: {
+      label: 'Black Ash',
+      steps: [{ action: 'select', selector: 'select[id^="Option-template"][id$="__main-0"]', value: 'Black Ash' }],
+      // The page's JSON-LD names variants only by ID; this is the Black Ash one.
+      offerMatch: 'variant=44233925066985',
+    },
+  },
+  {
+    id: 'hificorner-svs-sb1000pro-black-ash',
+    name: 'SVS SB-1000 Pro Subwoofer, Black Ash',
+    retailer: 'Hi-Fi Corner',
+    url: 'https://www.hificorner.co.uk/product/svs-sb-1000-pro-subwoofer/',
+    group: 'D',
+    country: 'UK',
+    vat: 'incl',
+    variant: {
+      label: 'Black Ash',
+      steps: [{ action: 'select', selector: 'select#pa_finish', value: 'blackash' }],
+    },
+    selectors: [...WOO_VARIATION_PRICE, '.elementor-widget-woocommerce-product-price p.price .woocommerce-Price-amount'],
+    stockSelector: '.single_variation .woocommerce-variation-availability',
+  },
 ];
