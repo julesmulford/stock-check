@@ -2,8 +2,9 @@ name: Price monitor
 
 on:
   schedule:
-    # GitHub cron is UTC: 06:00 UTC is 07:00 UK time in summer (BST) and 06:00 in winter (GMT).
-    - cron: '0 6 * * *'
+    # GitHub cron is UTC: 06:17 UTC is 07:17 UK time in summer (BST) and 06:17 in winter (GMT).
+    # Off the hour on purpose: GitHub delays, and at busy times drops, runs scheduled on the hour.
+    - cron: '17 6 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

@@ -41,7 +41,7 @@ describe('pricesTable', () => {
     version: 1,
     targets: {
       stand: ts(699, 'GBP', 699),
-      us: ts(1150, 'USD', 869.89), // £1,043.87 with VAT
+      us: ts(1150, 'USD', 869.89, { originalPrice: 1250, originalCurrency: 'USD', originalAt: '2026-09-20T06:00:00Z' }), // £1,043.87 with VAT
       fr: ts(1290, 'EUR', 1109.2),
       uk: ts(1010, 'GBP', 1010, { consecutiveFailures: 1 }),
     },
@@ -59,8 +59,8 @@ describe('pricesTable', () => {
   });
 
   it('shows country, native price, GBP and VAT-inclusive GBP', () => {
-    expect(md).toContain('| USA | US$1,150.00 + VAT | £869.89 | £1,043.87 |');
-    expect(md).toContain('| France | €1,290.00 | £1,109.20 | £1,109.20 |');
+    expect(md).toContain('| USA | US$1,150.00 + VAT | US$1,250.00 + VAT (20 Sept) | ↓ US$100.00 (−8%) | £869.89 | £1,043.87 |');
+    expect(md).toContain('| France | €1,290.00 | — | — | £1,109.20 | £1,109.20 |');
   });
 
   it('only shows conversion columns where they add something', () => {
@@ -87,6 +87,18 @@ describe('pricesTable', () => {
   it('renders a plain-text version with GBP incl. VAT first for the amplifiers', () => {
     const text = priceTableText(table);
     expect(text).toContain('  £699.00  KEF UK (UK) · In stock · ↓ £50.00 (−6.7%)');
-    expect(text).toContain('  £1,043.87 (US$1,150.00 + VAT)  VTV amp, VTV (USA) · In stock');
+    expect(text).toContain('  £1,043.87 (US$1,150.00 + VAT)  VTV amp, VTV (USA) · In stock · since original US$1,250.00 + VAT (20 Sept): ↓ US$100.00 (−8%)');
+  });
+
+  it('colours the change since the original price in the email', () => {
+    expect(priceTableHtml(table)).toMatch(/color:#137333;">↓ US\$100\.00 \(−8%\)/);
+  });
+
+  it('shows no change since the original when the price is back to it, and skips other currencies', () => {
+    const s = (extra: Partial<TargetState>) => ({ version: 1 as const, targets: { stand: ts(699, 'GBP', 699, extra) } });
+    const row = (extra: Partial<TargetState>) => buildPriceTable([stand], s(extra), [ok('stand')], [], { generatedAt: '2026-09-24T06:05:00Z', fx }).sections[0].rows[0];
+    expect(row({ originalPrice: 699, originalCurrency: 'GBP' })).toMatchObject({ sinceOriginal: '–', sinceKind: 'same' });
+    expect(row({ originalPrice: 649, originalCurrency: 'GBP' })).toMatchObject({ sinceOriginal: '↑ £50.00 (+7.7%)', sinceKind: 'up' });
+    expect(row({ originalPrice: 800, originalCurrency: 'EUR' })).toMatchObject({ sinceOriginal: '—', sinceKind: 'none' });
   });
 });

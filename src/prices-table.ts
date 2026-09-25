@@ -1,6 +1,7 @@
+import { pctChange } from './compare';
 import { AVAILABILITY_LABEL, formatMoney, round2 } from './price';
 import { STATUS_LABEL } from './report';
-import type { FxRates, Group, MonitorEvent, ScrapeResult, State, Target } from './types';
+import type { FxRates, Group, MonitorEvent, ScrapeResult, State, Target, TargetState } from './types';
 
 export const UK_VAT_RATE = 0.2;
 
@@ -24,6 +25,11 @@ export interface PriceRow {
   price: string;
   gbp: string;
   gbpVat: string;
+  /** Price when monitoring started, with the date it was recorded. Never changes. */
+  original: string;
+  /** Current price against the original, e.g. "↓ £50.00 (−7.2%)". */
+  sinceOriginal: string;
+  sinceKind: 'down' | 'up' | 'same' | 'none';
   stock: string;
   today: string;
   kind: 'drop' | 'rise' | 'new' | 'same' | 'failed' | 'other';
@@ -47,6 +53,20 @@ export interface PriceTable {
 /** GBP price with UK VAT: adds 20% for prices shown without VAT. */
 export function gbpInclVat(gbp: number | undefined, target: Target): number | undefined {
   return gbp == null ? undefined : target.vat === 'excl' ? round2(gbp * (1 + UK_VAT_RATE)) : gbp;
+}
+
+function sinceOriginal(s: TargetState | undefined, target: Target): Pick<PriceRow, 'original' | 'sinceOriginal' | 'sinceKind'> {
+  if (s?.originalPrice == null || !s.originalCurrency) return { original: '—', sinceOriginal: '—', sinceKind: 'none' };
+  const vat = target.vat === 'excl' ? ' + VAT' : '';
+  const original = `${formatMoney(s.originalPrice, s.originalCurrency)}${vat}${s.originalAt ? ` (${ukDate(s.originalAt)})` : ''}`;
+  // Only compare within one currency, as for drop alerts.
+  if (s.lastPrice == null || s.currency !== s.originalCurrency) return { original, sinceOriginal: '—', sinceKind: 'none' };
+  const diff = Math.round((s.lastPrice - s.originalPrice) * 100) / 100;
+  if (diff === 0) return { original, sinceOriginal: '–', sinceKind: 'same' };
+  const pct = pctChange(s.originalPrice, s.lastPrice);
+  return diff < 0
+    ? { original, sinceOriginal: `↓ ${formatMoney(-diff, s.currency)} (−${-pct}%)`, sinceKind: 'down' }
+    : { original, sinceOriginal: `↑ ${formatMoney(diff, s.currency)} (+${pct}%)`, sinceKind: 'up' };
 }
 
 function today(result: ScrapeResult | undefined, event: MonitorEvent | undefined, lastSuccessAt?: string): Pick<PriceRow, 'today' | 'kind'> {
@@ -97,6 +117,7 @@ export function buildPriceTable(
           price: (s?.lastPrice != null && s.currency ? formatMoney(s.lastPrice, s.currency) : '—') + (target.vat === 'excl' ? ' + VAT' : ''),
           gbp: gbp != null ? formatMoney(gbp, 'GBP') : '—',
           gbpVat: gbpVat != null ? formatMoney(gbpVat, 'GBP') : '—',
+          ...sinceOriginal(s, target),
           stock: AVAILABILITY_LABEL[s?.availability ?? 'unknown'],
           ...today(
             results.find((r) => r.targetId === target.id),
@@ -139,6 +160,8 @@ function columns(section: PriceSection): Array<{ header: string; value: (r: Pric
     { header: 'Retailer', value: (r) => r.retailer },
     { header: 'Country', value: (r) => r.country },
     { header: 'Price', value: (r) => r.price },
+    { header: 'Original price', value: (r) => r.original },
+    { header: 'Since original', value: (r) => r.sinceOriginal },
     ...(section.showConversion
       ? [
           { header: '≈ GBP', value: (r: PriceRow) => r.gbp },
@@ -176,6 +199,8 @@ export function priceTableMarkdown(t: PriceTable): string {
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+const SINCE_COLOUR: Record<PriceRow['sinceKind'], string> = { down: 'color:#137333;', up: 'color:#c5221f;', same: '', none: '' };
+
 /** The table for the daily email. Inline styles, because email clients ignore stylesheets. */
 export function priceTableHtml(t: PriceTable): string {
   const cell = 'padding:6px 10px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top;';
@@ -192,7 +217,8 @@ export function priceTableHtml(t: PriceTable): string {
       const cells = cols.map((c) => {
         const v = esc(c.value(row));
         const content = c.header === 'Retailer' ? `<a href="${esc(row.url)}">${v}</a>` : c.header === 'Today' && row.kind === 'drop' ? `<strong>${v}</strong>` : v;
-        return `<td style="${cell}${bg}">${content}</td>`;
+        const colour = c.header === 'Since original' ? SINCE_COLOUR[row.sinceKind] : '';
+        return `<td style="${cell}${bg}${colour}">${content}</td>`;
       });
       out.push(`<tr>${cells.join('')}</tr>`);
     }
@@ -211,7 +237,8 @@ export function priceTableText(t: PriceTable): string {
       const lead = section.showConversion ? `${r.gbpVat}${r.gbpVat !== r.price ? ` (${r.price})` : ''}` : r.price;
       const what = section.showProduct ? `${r.product}, ${r.retailer}` : r.retailer;
       const change = r.kind === 'same' ? '' : ` · ${r.today}`;
-      out.push(`  ${lead}  ${what} (${r.country}) · ${r.stock}${change}`);
+      const since = r.sinceKind === 'down' || r.sinceKind === 'up' ? ` · since original ${r.original}: ${r.sinceOriginal}` : '';
+      out.push(`  ${lead}  ${what} (${r.country}) · ${r.stock}${change}${since}`);
     }
     out.push('');
   }

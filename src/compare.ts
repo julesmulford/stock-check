@@ -14,6 +14,17 @@ function pushHistory(history: HistoryEntry[], entry: HistoryEntry): HistoryEntry
 }
 
 /**
+ * Set the original price if it isn't set yet: from the first recorded reading if there is one,
+ * otherwise from `reading`. Once set it is never changed.
+ */
+export function withOriginal(s: TargetState, reading?: { price: number; currency: string; at: string }): TargetState {
+  if (s.originalPrice != null) return s;
+  const first = s.history.find((h) => h.change === 'initial') ?? s.history[0];
+  const source = first ? { price: first.price, currency: first.currency, at: first.at } : reading;
+  return source ? { ...s, originalPrice: source.price, originalCurrency: source.currency, originalAt: source.at } : s;
+}
+
+/**
  * Fold one scrape result into a target's state. Pure: returns the new state and the event
  * describing what happened. Prices are compared only within the same currency.
  */
@@ -23,9 +34,12 @@ export function applyResult(
   result: ScrapeResult,
   now: string,
 ): { next: TargetState; event: MonitorEvent } {
-  const base: TargetState = prev
-    ? { ...prev, name: target.name, retailer: target.retailer, url: target.url }
-    : { name: target.name, retailer: target.retailer, url: target.url, consecutiveFailures: 0, failureAlerted: false, history: [] };
+  // Backfills the original price for targets saved before the field existed.
+  const base: TargetState = withOriginal(
+    prev
+      ? { ...prev, name: target.name, retailer: target.retailer, url: target.url }
+      : { name: target.name, retailer: target.retailer, url: target.url, consecutiveFailures: 0, failureAlerted: false, history: [] },
+  );
   base.lastCheckedAt = now;
   const id = target.id;
 
@@ -45,17 +59,20 @@ export function applyResult(
   const { price, currency } = result;
   const availability = result.availability ?? 'unknown';
   const recovered = base.consecutiveFailures > 0 ? base.consecutiveFailures : 0;
-  const ok: TargetState = {
-    ...base,
-    lastPrice: price,
-    currency,
-    lastGbp: result.gbp,
-    availability,
-    lastSuccessAt: now,
-    consecutiveFailures: 0,
-    failureAlerted: false,
-    lastError: undefined,
-  };
+  const ok: TargetState = withOriginal(
+    {
+      ...base,
+      lastPrice: price,
+      currency,
+      lastGbp: result.gbp,
+      availability,
+      lastSuccessAt: now,
+      consecutiveFailures: 0,
+      failureAlerted: false,
+      lastError: undefined,
+    },
+    { price, currency, at: now },
+  );
   const entry = (change: HistoryEntry['change']): HistoryEntry => ({ at: now, price, currency, gbp: result.gbp, availability, change });
 
   if (base.lastPrice == null || !base.currency) {

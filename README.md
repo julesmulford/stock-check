@@ -2,7 +2,7 @@
 
 Once a day, a GitHub Actions workflow visits each product page in [src/targets.ts](src/targets.ts). It reads the price and stock status, compares them with the last recorded price in [data/prices.json](data/prices.json), and sends an email when a price has dropped. It also sends an email if a target fails three runs in a row, because that usually means a page or selector has changed.
 
-- Runs every day at 06:00 UTC, which is 07:00 UK time in summer and 06:00 in winter, and on demand from the Actions tab.
+- Runs every day at 06:17 UTC, which is 07:17 UK time in summer and 06:17 in winter, and on demand from the Actions tab. It's scheduled off the hour because GitHub delays, and at busy times skips, runs scheduled on the hour. Even so, scheduled runs can start late.
 - Visits pages one at a time with a pause between them, using an ordinary desktop Chromium. It doesn't work around bot protection: blocked sites are flagged in the run summary.
 - Sends one email every morning with the full prices table. When a price has dropped, the subject says so and the drop details come first, above the table (drops are highlighted in it too). Targets that have just failed three runs in a row are listed the same way. Price rises show in the table's "Today" column but get no special alert.
 - Every run updates **[PRICES.md](PRICES.md)**, a table of every item's current price, GBP equivalent, country and stock, and writes it to the job summary too.
@@ -13,6 +13,7 @@ Once a day, a GitHub Actions workflow visits each product page in [src/targets.t
 
 - **Retailer** (linked to the product page) and **Country** the seller is in.
 - **Price** in the seller's own currency. "+ VAT" marks sellers outside the UK that show prices without VAT.
+- **Original price**: the price when monitoring of that item started, with the date. It's set once, from the item's first successful reading, and never changes. **Since original** shows how far the current price has moved from it (green for down, red for up in the email). It's only compared when both prices are in the same currency.
 - **≈ GBP**, converted at that day's European Central Bank reference rate (from [Frankfurter](https://frankfurter.dev), no account needed). The rate is recorded with each reading in `data/prices.json`.
 - **≈ GBP incl. UK VAT**, adding the 20% import VAT you'd pay on delivery for "+ VAT" prices. Shipping, customs duty and courier fees aren't included.
 - **Stock**, and **Today**: the change since the previous run (↓ drop, ↑ rise, "new" for a first reading). If a page couldn't be read, the last known price stays in the table with a ⚠ and the date it was read.
@@ -84,6 +85,7 @@ Keep a target's `id` unchanged once it has history. The `id` is the key in `data
 
 `data/prices.json` stores the following for each target:
 - the latest price, currency and stock status
+- the original price, currency and date (set once, never changed)
 - when it was last checked and last succeeded
 - its failure streak
 - up to 30 history entries, one each time the price, currency or stock status changes

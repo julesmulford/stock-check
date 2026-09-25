@@ -98,6 +98,13 @@ export interface TargetState {
   currency?: string;
   /** GBP equivalent of `lastPrice` at the time it was read. */
   lastGbp?: number;
+  /**
+   * The price when monitoring started: set from the first successful reading and never changed
+   * afterwards, as a fixed reference for how far the price has moved.
+   */
+  originalPrice?: number;
+  originalCurrency?: string;
+  originalAt?: string;
   availability?: Availability;
   lastCheckedAt?: string;
   lastSuccessAt?: string;

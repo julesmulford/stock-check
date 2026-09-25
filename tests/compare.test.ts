@@ -84,6 +84,30 @@ describe('applyResult', () => {
     expect(events.some((e) => e.type === 'failure_alert')).toBe(false);
   });
 
+  it('sets the original price at the first reading and never changes it', () => {
+    const { state } = run([ok(699), ok(649), ok(749), ok(1190, 'EUR'), fail(), ok(599)]);
+    expect(state).toMatchObject({ originalPrice: 699, originalCurrency: 'GBP', originalAt: '2026-01-01T07:00:00Z', lastPrice: 599 });
+  });
+
+  it('does not set an original price until a reading succeeds', () => {
+    const { state } = run([fail(), fail()]);
+    expect(state.originalPrice).toBeUndefined();
+    expect(applyResult(state, target, ok(699), 'later').next.originalPrice).toBe(699);
+  });
+
+  it('backfills the original price from the first recorded reading for older saved state', () => {
+    const saved: TargetState = {
+      name: 'KEF', retailer: 'KEF UK', url: 'u', lastPrice: 649, currency: 'GBP', consecutiveFailures: 0, failureAlerted: false,
+      history: [
+        { at: '2026-09-24T06:00:00Z', price: 699, currency: 'GBP', change: 'initial' },
+        { at: '2026-09-26T06:00:00Z', price: 649, currency: 'GBP', change: 'drop' },
+      ],
+    };
+    expect(applyResult(saved, target, ok(649), 'now').next).toMatchObject({ originalPrice: 699, originalAt: '2026-09-24T06:00:00Z' });
+    // Also on a failed run, so the table shows it either way.
+    expect(applyResult(saved, target, fail(), 'now').next.originalPrice).toBe(699);
+  });
+
   it('caps history length', () => {
     const results = Array.from({ length: HISTORY_LIMIT + 10 }, (_, i) => ok(1000 - i));
     expect(run(results).state.history).toHaveLength(HISTORY_LIMIT);
