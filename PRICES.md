@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 26 Sept 2026, 12:32 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 27 Sept 2026, 13:10 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -33,11 +33,11 @@ Updated 26 Sept 2026, 12:32 (UK time). Each section is sorted cheapest first, in
 
 | Retailer | Country | Price | Original price | Since original | Stock | Today |
 |---|---|---|---|---|---|---|
-| [Home AV Direct](https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | new |
-| [Peter Tyson](https://petertyson.co.uk/svs-sb-1000-pro-subwoofer) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | new |
-| [Home Media](https://www.homemedialimited.co.uk/product/svs-sb-1000-pro-subwoofer/) | UK | £679.00 | £679.00 (26 Sept) | – | — | new |
-| [Premium Sound](https://premiumsound.co.uk/product/speakers/subwoofers/svs-sb1000-pro/) | UK | £679.00 | £679.00 (26 Sept) | – | — | new |
-| [Nintronics](https://nintronics.co.uk/products/svs-sb-1000-pro-subwoofer) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | new |
+| [Home AV Direct](https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | – |
+| [Peter Tyson](https://petertyson.co.uk/svs-sb-1000-pro-subwoofer) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | – |
+| [Home Media](https://www.homemedialimited.co.uk/product/svs-sb-1000-pro-subwoofer/) | UK | £679.00 | £679.00 (26 Sept) | – | — | – |
+| [Premium Sound](https://premiumsound.co.uk/product/speakers/subwoofers/svs-sb1000-pro/) | UK | £679.00 | £679.00 (26 Sept) | – | — | – |
+| [Nintronics](https://nintronics.co.uk/products/svs-sb-1000-pro-subwoofer) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | – |
 
 ## Ex demo watch: SVS SB-1000 Pro
 
