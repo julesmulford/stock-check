@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 28 Sept 2026, 15:07 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 29 Sept 2026, 14:02 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -9,7 +9,7 @@ Updated 28 Sept 2026, 15:07 (UK time). Each section is sorted cheapest first, in
 | [Home AV Direct](https://homeavdirect.co.uk/kef-s3-floor-stands-indigo) | UK | £649.00 | £649.00 (24 Sept) | – | In stock | – |
 | [Audio Lounge](https://www.audiolounge.co.uk/kef-s3-stands) | UK | £649.00 | £649.00 (24 Sept) | – | — | – |
 | [HBH Woolacotts](https://www.hbh-woolacotts.co.uk/audio/S3STAND-IB) | UK | £649.99 | £649.99 (24 Sept) | – | In stock | – |
-| [Smart Home Sounds](https://www.smarthomesounds.co.uk/kef-s3-floor-stand-for-r3-indigo) | UK | £699.00 | £699.00 (24 Sept) | – | Out of stock | – |
+| [Smart Home Sounds](https://www.smarthomesounds.co.uk/kef-s3-floor-stand-for-r3-indigo) | UK | £699.00 | £699.00 (24 Sept) | – | Out of stock | ⚠ blocked by site; price from 28 Sept |
 | [Peter Tyson](https://petertyson.co.uk/kef-s3-floor-stands) | UK | £699.00 | £699.00 (24 Sept) | – | In stock | – |
 | [KEF UK](https://uk.kef.com/products/s3-floor-stand) | UK | £699.00 | £699.00 (24 Sept) | – | In stock | – |
 | [Weybridge Audio](https://www.weybridge-audio.co.uk/products/kef-s3-speaker-stands) | UK | £699.00 | £699.00 (24 Sept) | – | In stock | – |
