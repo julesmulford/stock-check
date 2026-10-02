@@ -156,7 +156,22 @@ describe('buildEmail', () => {
     expect(hasAlerts(events)).toBe(false);
     expect(email.text).toContain('KEF S3 FLOOR STANDS');
     expect(email.text).not.toContain('PRICE DROPS');
+    expect(email.text).not.toContain('***');
+    expect(email.html).not.toContain('↓ Price drop');
     expect(email.html).toContain('<table');
+  });
+
+  it('opens with a banner naming what got cheaper', () => {
+    const one: MonitorEvent[] = [{ type: 'drop', targetId: 'kef', oldPrice: 699, newPrice: 599, currency: 'GBP', pctDrop: 14.3 }];
+    const email = buildEmail(one, [target, other], [ok(599)], table(one));
+    expect(email.text.startsWith('*** PRICE DROP ***\n  KEF UK (stands): £699.00 -> £599.00 (−14.3%)\n')).toBe(true);
+    expect(email.html).toMatch(/^<div[^>]*>\n<div style="background:#e6f4ea[^>]*><div[^>]*>↓ Price drop<\/div><div[^>]*>KEF UK \(stands\): £699\.00 → £599\.00 \(−14\.3%\)<\/div><\/div>/);
+
+    const two: MonitorEvent[] = [...one, { type: 'drop', targetId: 'nord', oldPrice: 1010, newPrice: 950, currency: 'GBP', pctDrop: 5.9 }];
+    const both = buildEmail(two, [target, other], [ok(599)], table(two));
+    expect(both.text.startsWith('*** 2 PRICE DROPS ***\n')).toBe(true);
+    expect(both.html).toContain('↓ 2 price drops</div>');
+    expect(both.html).toContain('Nord Three: £1,010.00 → £950.00 (−5.9%)</div>');
   });
 
   it('puts drop details and broken targets before the table', () => {

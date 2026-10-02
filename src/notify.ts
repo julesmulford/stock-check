@@ -77,6 +77,24 @@ export function buildEmail(
   const text: string[] = [];
   const html: string[] = ['<div style="font-family:Arial,Helvetica,sans-serif;color:#222">'];
 
+  // Anything that got cheaper goes in a banner above everything else, so it can't be missed.
+  const cheaper = [
+    ...finds.flatMap((f) =>
+      f.type === 'cheaper' ? [`Ex demo ${EXDEMO_MODEL} at ${f.listing.retailer}: ${formatMoney(f.oldPrice, f.listing.currency ?? 'GBP')} → ${exDemoPrice(f.listing)}`] : [],
+    ),
+    ...drops.map((d) => `${subjectLabel(byId(d.targetId))}: ${formatMoney(d.oldPrice, d.currency)} → ${formatMoney(d.newPrice, d.currency)} (−${d.pctDrop}%)`),
+  ];
+  if (cheaper.length) {
+    const title = cheaper.length === 1 ? 'Price drop' : `${cheaper.length} price drops`;
+    text.push(`*** ${title.toUpperCase()} ***`, ...cheaper.map((c) => `  ${c.replace('→', '->')}`), '');
+    html.push(
+      '<div style="background:#e6f4ea;border-left:6px solid #137333;padding:14px 18px;margin:0 0 20px">' +
+        `<div style="font-size:22px;font-weight:bold;color:#137333">↓ ${esc(title)}</div>` +
+        cheaper.map((c) => `<div style="font-size:16px;margin-top:6px">${esc(c)}</div>`).join('') +
+        '</div>',
+    );
+  }
+
   if (finds.length) {
     const heading = `Ex demo ${EXDEMO_MODEL.replace(/^SVS /, '')} found`;
     text.push(heading.toUpperCase(), '');
