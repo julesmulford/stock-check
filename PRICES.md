@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 3 Oct 2026, 12:47 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 4 Oct 2026, 13:29 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -27,7 +27,7 @@ Updated 3 Oct 2026, 12:47 (UK time). Each section is sorted cheapest first, incl
 | Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html) | France | €1,290.00 | €1,290.00 (24 Sept) | – | £1,096.94 | £1,096.94 | Pre-order | – |
 | Apollon Purifi 1ET400A ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-1et400a-st-stereo-amplifier-1993/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £926.87 | £1,112.24 | In stock | – |
 | Apollon Purifi 1ET6525SA ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/) | Slovenia | €1,190.00 + VAT | €1,090.00 + VAT (24 Sept) | ↑ €100.00 (+9.2%) | £1,011.90 | £1,214.28 | In stock | – |
-| Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-hpa-s450et-p-20205.html) | France | €1,490.00 | €1,490.00 (24 Sept) | – | £1,267.01 | £1,267.01 | In stock | – |
+| Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-hpa-s450et-p-20205.html) | France | €1,490.00 | €1,490.00 (24 Sept) | – | £1,267.01 | £1,267.01 | Pre-order | – |
 
 ## SVS SB-1000 Pro subwoofer, Black Ash
 
