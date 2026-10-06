@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 5 Oct 2026, 15:52 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 6 Oct 2026, 14:24 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -20,7 +20,7 @@ Updated 5 Oct 2026, 15:52 (UK time). Each section is sorted cheapest first, incl
 
 | Product | Retailer | Country | Price | Original price | Since original | ≈ GBP | ≈ GBP incl. UK VAT | Stock | Today |
 |---|---|---|---|---|---|---|---|---|---|
-| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £802.97 | £963.56 | In stock | ⚠ price not found; price from 4 Oct |
+| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £801.51 | £961.81 | In stock | – |
 | Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier | [Nord Acoustics](https://nordacoustics.co.uk/product/nord-three-1et6525sa-1et400a-std-standard-stereo-amplifier-copy/) | UK | £1,010.00 | £1,010.00 (24 Sept) | – | £1,010.00 | £1,010.00 | In stock | – |
 | VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £869.57 | £1,043.48 | In stock | – |
 | Buckeye Purifi 1ET6525SA 2-Channel Amplifier | [Buckeye Amps](https://www.buckeyeamp.com/shop/amplifiers/purifi/1et6525sa/2_channel) | USA | US$1,195.00 + VAT | US$1,195.00 + VAT (24 Sept) | – | £903.59 | £1,084.31 | — | – |
