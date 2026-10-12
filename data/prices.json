@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T13:01:48.441Z",
+  "updatedAt": "2026-10-12T15:39:39.433Z",
   "targets": {
     "smarthomesounds-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -17,11 +17,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "out_of_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 699,
       "originalPrice": 699,
       "originalCurrency": "GBP",
@@ -42,11 +42,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 649,
       "originalPrice": 649,
       "originalCurrency": "GBP",
@@ -67,11 +67,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 649.99,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 649.99,
       "originalPrice": 649.99,
       "originalCurrency": "GBP",
@@ -92,11 +92,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 699,
       "originalPrice": 699,
       "originalCurrency": "GBP",
@@ -106,7 +106,7 @@
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
       "retailer": "KEF UK",
       "url": "https://uk.kef.com/products/s3-floor-stand",
-      "consecutiveFailures": 7,
+      "consecutiveFailures": 8,
       "failureAlerted": true,
       "history": [
         {
@@ -124,7 +124,7 @@
           "change": "drop"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
@@ -150,11 +150,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 699,
       "originalPrice": 699,
       "originalCurrency": "GBP",
@@ -175,11 +175,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 649,
       "originalPrice": 649,
       "originalCurrency": "GBP",
@@ -200,12 +200,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
-      "lastGbp": 923.89,
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
+      "lastGbp": 920.84,
       "originalPrice": 1090,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T11:42:39.254Z"
@@ -225,11 +225,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1010,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "lastGbp": 1010,
       "originalPrice": 1010,
       "originalCurrency": "GBP",
@@ -251,12 +251,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 699,
       "currency": "GBP",
       "lastGbp": 699,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 699,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -277,12 +277,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 699,
       "currency": "GBP",
       "lastGbp": 699,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 699,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -311,12 +311,12 @@
           "change": "rise"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1190,
       "currency": "EUR",
-      "lastGbp": 1008.65,
+      "lastGbp": 1005.32,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 1090,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -361,12 +361,12 @@
           "change": "stock"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1290,
       "currency": "EUR",
-      "lastGbp": 1093.41,
+      "lastGbp": 1089.8,
       "availability": "preorder",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 1290,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -395,12 +395,12 @@
           "change": "stock"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1490,
       "currency": "EUR",
-      "lastGbp": 1262.93,
+      "lastGbp": 1258.76,
       "availability": "preorder",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 1490,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -421,12 +421,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1150,
       "currency": "USD",
-      "lastGbp": 869.89,
+      "lastGbp": 868.91,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 1150,
       "originalCurrency": "USD",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -447,12 +447,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1195,
       "currency": "USD",
-      "lastGbp": 903.93,
+      "lastGbp": 902.91,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 1195,
       "originalCurrency": "USD",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -461,7 +461,7 @@
       "name": "Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier",
       "retailer": "Maroon Audio",
       "url": "https://maroonaudio.com/product/1et6525sa-purifi-stereo/",
-      "consecutiveFailures": 0,
+      "consecutiveFailures": 1,
       "failureAlerted": false,
       "history": [
         {
@@ -473,7 +473,7 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 1060,
       "currency": "USD",
       "lastGbp": 801.82,
@@ -481,7 +481,8 @@
       "lastSuccessAt": "2026-10-11T13:01:48.441Z",
       "originalPrice": 1060,
       "originalCurrency": "USD",
-      "originalAt": "2026-09-24T15:18:00.987Z"
+      "originalAt": "2026-09-24T15:18:00.987Z",
+      "lastError": "Price not found"
     },
     "homeavdirect-svs-sb1000pro-black-ash": {
       "name": "SVS SB-1000 Pro Subwoofer, Black Ash",
@@ -499,12 +500,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -525,12 +526,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -551,12 +552,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -577,12 +578,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -603,22 +604,22 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-11T13:01:48.441Z",
+      "lastCheckedAt": "2026-10-12T15:39:39.433Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+      "lastSuccessAt": "2026-10-12T15:39:39.433Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
     }
   },
   "fx": {
-    "date": "2026-10-09",
+    "date": "2026-10-12",
     "perGbp": {
-      "EUR": 1.1798,
-      "USD": 1.322
+      "EUR": 1.1837,
+      "USD": 1.3235
     }
   },
   "exdemo": {
@@ -626,25 +627,39 @@
       "homeavdirect-clearance-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-10-11T13:01:48.441Z",
-        "lastSuccessAt": "2026-10-11T13:01:48.441Z",
-        "lastItemCount": 0
+        "lastCheckedAt": "2026-10-12T15:39:39.433Z",
+        "lastSuccessAt": "2026-10-12T15:39:39.433Z",
+        "lastItemCount": 1
       },
       "homeavdirect-exdemo-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-10-11T13:01:48.441Z",
-        "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+        "lastCheckedAt": "2026-10-12T15:39:39.433Z",
+        "lastSuccessAt": "2026-10-12T15:39:39.433Z",
         "lastItemCount": 0
       },
       "nintronics-bargains-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-10-11T13:01:48.441Z",
-        "lastSuccessAt": "2026-10-11T13:01:48.441Z",
+        "lastCheckedAt": "2026-10-12T15:39:39.433Z",
+        "lastSuccessAt": "2026-10-12T15:39:39.433Z",
         "lastItemCount": 0
       }
     },
-    "listings": {}
+    "listings": {
+      "www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash-1": {
+        "key": "www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash-1",
+        "title": "SVS SB-1000 Pro Subwoofer - Black Ash - OPEN BOX",
+        "price": 599,
+        "currency": "GBP",
+        "condition": "Open box",
+        "url": "https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash-1?variant=52119543349590&_pos=1&_fid=5f5d368df&_ss=c",
+        "pageId": "homeavdirect-clearance-svs",
+        "retailer": "Home AV Direct",
+        "firstSeenAt": "2026-10-12T15:39:39.433Z",
+        "lastSeenAt": "2026-10-12T15:39:39.433Z",
+        "listed": true
+      }
+    }
   }
 }
