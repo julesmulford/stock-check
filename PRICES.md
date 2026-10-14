@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 13 Oct 2026, 15:20 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 14 Oct 2026, 13:02 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -45,7 +45,7 @@ Updated 13 Oct 2026, 15:20 (UK time). Each section is sorted cheapest first, inc
 
 | Retailer | Listing | Condition | Price | First seen | Today |
 |---|---|---|---|---|---|
-| Home AV Direct (Clearance) | [SVS SB-1000 Pro Subwoofer - Black Ash - OPEN BOX](https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash-1?variant=52119543349590&_pos=1&_fid=446f1f71a&_ss=c) | Open box | £599.00 | 12 Oct | – |
+| Home AV Direct (Clearance) | [SVS SB-1000 Pro Subwoofer - Black Ash - OPEN BOX](https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash-1?variant=52119543349590&_pos=1&_fid=69d90a369&_ss=c) | Open box | £599.00 | 12 Oct | – |
 
 ---
 
