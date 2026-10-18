@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 17 Oct 2026, 11:53 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 18 Oct 2026, 12:18 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -20,7 +20,7 @@ Updated 17 Oct 2026, 11:53 (UK time). Each section is sorted cheapest first, inc
 
 | Product | Retailer | Country | Price | Original price | Since original | ≈ GBP | ≈ GBP incl. UK VAT | Stock | Today |
 |---|---|---|---|---|---|---|---|---|---|
-| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £794.90 | £953.88 | In stock | – |
+| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £794.90 | £953.88 | In stock | ⚠ price not found; price from 17 Oct |
 | Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier | [Nord Acoustics](https://nordacoustics.co.uk/product/nord-three-1et6525sa-1et400a-std-standard-stereo-amplifier-copy/) | UK | £1,010.00 | £1,010.00 (24 Sept) | – | £1,010.00 | £1,010.00 | In stock | – |
 | VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £862.39 | £1,034.87 | In stock | – |
 | Buckeye Purifi 1ET6525SA 2-Channel Amplifier | [Buckeye Amps](https://www.buckeyeamp.com/shop/amplifiers/purifi/1et6525sa/2_channel) | USA | US$1,195.00 + VAT | US$1,195.00 + VAT (24 Sept) | – | £896.14 | £1,075.37 | — | – |
@@ -41,11 +41,7 @@ Updated 17 Oct 2026, 11:53 (UK time). Each section is sorted cheapest first, inc
 
 ## Ex demo watch: SVS SB-1000 Pro
 
-3 clearance / ex-demo pages checked. 1 SB-1000 Pro listing currently on them.
-
-| Retailer | Listing | Condition | Price | First seen | Today |
-|---|---|---|---|---|---|
-| Home AV Direct (Clearance) | [SVS SB-1000 Pro Subwoofer - Black Ash - OPEN BOX](https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash-1?variant=52119543349590) | Open box | £599.00 | 12 Oct | – |
+3 clearance / ex-demo pages checked. No SB-1000 Pro listings on them.
 
 ---
 
