@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T13:31:09.228Z",
+  "updatedAt": "2026-10-20T11:47:53.406Z",
   "targets": {
     "smarthomesounds-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
       "retailer": "Smart Home Sounds",
       "url": "https://www.smarthomesounds.co.uk/kef-s3-floor-stand-for-r3-indigo",
-      "consecutiveFailures": 0,
+      "consecutiveFailures": 1,
       "failureAlerted": false,
       "history": [
         {
@@ -17,7 +17,7 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "out_of_stock",
@@ -25,7 +25,8 @@
       "lastGbp": 699,
       "originalPrice": 699,
       "originalCurrency": "GBP",
-      "originalAt": "2026-09-24T11:42:39.254Z"
+      "originalAt": "2026-09-24T11:42:39.254Z",
+      "lastError": "HTTP 503"
     },
     "homeavdirect-kef-s3-indigo": {
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
@@ -42,11 +43,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "lastGbp": 649,
       "originalPrice": 649,
       "originalCurrency": "GBP",
@@ -67,11 +68,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 649.99,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "lastGbp": 649.99,
       "originalPrice": 649.99,
       "originalCurrency": "GBP",
@@ -92,11 +93,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "lastGbp": 699,
       "originalPrice": 699,
       "originalCurrency": "GBP",
@@ -106,7 +107,7 @@
       "name": "KEF S3 Floor Stands, Indigo Matte SE (pair)",
       "retailer": "KEF UK",
       "url": "https://uk.kef.com/products/s3-floor-stand",
-      "consecutiveFailures": 15,
+      "consecutiveFailures": 16,
       "failureAlerted": true,
       "history": [
         {
@@ -124,7 +125,7 @@
           "change": "drop"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
@@ -150,11 +151,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 699,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "lastGbp": 699,
       "originalPrice": 699,
       "originalCurrency": "GBP",
@@ -175,11 +176,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 649,
       "currency": "GBP",
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "lastGbp": 649,
       "originalPrice": 649,
       "originalCurrency": "GBP",
@@ -200,15 +201,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1090,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T11:42:39.254Z",
-      "lastGbp": 919.83
+      "lastGbp": 917.82
     },
     "nord-three-1et6525sa-1et400a-std": {
       "name": "Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier",
@@ -225,11 +226,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1010,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "lastGbp": 1010,
       "originalPrice": 1010,
       "originalCurrency": "GBP",
@@ -251,12 +252,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 699,
       "currency": "GBP",
       "lastGbp": 699,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 699,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -277,12 +278,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 699,
       "currency": "GBP",
       "lastGbp": 699,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 699,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -318,15 +319,15 @@
           "change": "drop"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1090,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 919.83
+      "lastGbp": 917.82
     },
     "audiophonics-lpa-s450et": {
       "name": "Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W",
@@ -368,15 +369,15 @@
           "change": "stock"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1290,
       "currency": "EUR",
       "availability": "preorder",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1290,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 1088.61
+      "lastGbp": 1086.22
     },
     "audiophonics-hpa-s450et": {
       "name": "Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W",
@@ -402,15 +403,15 @@
           "change": "stock"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1490,
       "currency": "EUR",
       "availability": "preorder",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1490,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 1257.38
+      "lastGbp": 1254.63
     },
     "vtv-purifi-1et6525sa-stereo": {
       "name": "VTV Stereo Purifi 1ET6525SA Amplifier",
@@ -428,15 +429,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1150,
       "currency": "USD",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1150,
       "originalCurrency": "USD",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 862.39
+      "lastGbp": 862.65
     },
     "buckeye-purifi-1et6525sa-2ch": {
       "name": "Buckeye Purifi 1ET6525SA 2-Channel Amplifier",
@@ -454,15 +455,15 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1195,
       "currency": "USD",
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1195,
       "originalCurrency": "USD",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 896.14
+      "lastGbp": 896.41
     },
     "maroon-m6525-stereo": {
       "name": "Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier",
@@ -480,12 +481,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 1060,
       "currency": "USD",
-      "lastGbp": 794.9,
+      "lastGbp": 795.14,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 1060,
       "originalCurrency": "USD",
       "originalAt": "2026-09-24T15:18:00.987Z"
@@ -506,12 +507,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -532,12 +533,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -558,12 +559,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -584,12 +585,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "unknown",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -610,22 +611,22 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-10-19T13:31:09.228Z",
+      "lastCheckedAt": "2026-10-20T11:47:53.406Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+      "lastSuccessAt": "2026-10-20T11:47:53.406Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
     }
   },
   "fx": {
-    "date": "2026-10-16",
+    "date": "2026-10-19",
     "perGbp": {
-      "EUR": 1.185,
-      "USD": 1.3335
+      "EUR": 1.1876,
+      "USD": 1.3331
     }
   },
   "exdemo": {
@@ -633,22 +634,22 @@
       "homeavdirect-clearance-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-10-19T13:31:09.228Z",
-        "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+        "lastCheckedAt": "2026-10-20T11:47:53.406Z",
+        "lastSuccessAt": "2026-10-20T11:47:53.406Z",
         "lastItemCount": 0
       },
       "homeavdirect-exdemo-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-10-19T13:31:09.228Z",
-        "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+        "lastCheckedAt": "2026-10-20T11:47:53.406Z",
+        "lastSuccessAt": "2026-10-20T11:47:53.406Z",
         "lastItemCount": 0
       },
       "nintronics-bargains-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-10-19T13:31:09.228Z",
-        "lastSuccessAt": "2026-10-19T13:31:09.228Z",
+        "lastCheckedAt": "2026-10-20T11:47:53.406Z",
+        "lastSuccessAt": "2026-10-20T11:47:53.406Z",
         "lastItemCount": 0
       }
     },
