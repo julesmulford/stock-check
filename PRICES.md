@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 24 Oct 2026, 12:12 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 25 Oct 2026, 11:42 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
