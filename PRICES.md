@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 29 Oct 2026, 13:14 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 30 Oct 2026, 13:06 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## KEF S3 Floor Stands, Indigo (pair)
 
@@ -20,14 +20,14 @@ Updated 29 Oct 2026, 13:14 (UK time). Each section is sorted cheapest first, inc
 
 | Product | Retailer | Country | Price | Original price | Since original | ≈ GBP | ≈ GBP incl. UK VAT | Stock | Today |
 |---|---|---|---|---|---|---|---|---|---|
-| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £797.71 | £957.25 | In stock | – |
+| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £795.98 | £955.18 | In stock | – |
 | Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier | [Nord Acoustics](https://nordacoustics.co.uk/product/nord-three-1et6525sa-1et400a-std-standard-stereo-amplifier-copy/) | UK | £1,010.00 | £1,010.00 (24 Sept) | – | £1,010.00 | £1,010.00 | In stock | – |
-| VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £865.44 | £1,038.53 | In stock | – |
-| Buckeye Purifi 1ET6525SA 2-Channel Amplifier | [Buckeye Amps](https://www.buckeyeamp.com/shop/amplifiers/purifi/1et6525sa/2_channel) | USA | US$1,195.00 + VAT | US$1,195.00 + VAT (24 Sept) | – | £899.31 | £1,079.17 | — | – |
-| Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html) | France | €1,290.00 | €1,290.00 (24 Sept) | – | £1,080.85 | £1,080.85 | Pre-order | – |
-| Apollon Purifi 1ET400A ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-1et400a-st-stereo-amplifier-1993/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £913.28 | £1,095.94 | In stock | – |
-| Apollon Purifi 1ET6525SA ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £913.28 | £1,095.94 | In stock | – |
-| Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-hpa-s450et-p-20205.html) | France | €1,490.00 | €1,490.00 (24 Sept) | – | £1,248.43 | £1,248.43 | Pre-order | – |
+| VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £863.56 | £1,036.27 | In stock | – |
+| Buckeye Purifi 1ET6525SA 2-Channel Amplifier | [Buckeye Amps](https://www.buckeyeamp.com/shop/amplifiers/purifi/1et6525sa/2_channel) | USA | US$1,195.00 + VAT | US$1,195.00 + VAT (24 Sept) | – | £897.35 | £1,076.82 | — | – |
+| Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html) | France | €1,290.00 | €1,290.00 (24 Sept) | – | £1,078.14 | £1,078.14 | Pre-order | – |
+| Apollon Purifi 1ET400A ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-1et400a-st-stereo-amplifier-1993/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £910.99 | £1,093.19 | In stock | – |
+| Apollon Purifi 1ET6525SA ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £910.99 | £1,093.19 | In stock | – |
+| Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-hpa-s450et-p-20205.html) | France | €1,490.00 | €1,490.00 (24 Sept) | – | £1,245.30 | £1,245.30 | Pre-order | – |
 
 ## SVS SB-1000 Pro subwoofer, Black Ash
 
@@ -45,6 +45,6 @@ Updated 29 Oct 2026, 13:14 (UK time). Each section is sorted cheapest first, inc
 
 ---
 
-- Exchange rates: European Central Bank reference rates for 2026-10-28 (£1 = €1.19, £1 = US$1.33).
+- Exchange rates: European Central Bank reference rates for 2026-10-29 (£1 = €1.20, £1 = US$1.33).
 - "+ VAT" prices are from sellers outside the UK that show prices without VAT. "Incl. UK VAT" adds the 20% import VAT you would pay on delivery. It does not include shipping, customs duty or courier fees.
 - Price drops are measured in each seller's own currency, so exchange-rate moves never trigger an alert.
