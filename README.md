@@ -9,7 +9,7 @@ Once a day, a GitHub Actions workflow visits each product page in [src/targets.t
 
 ## The daily prices table
 
-[PRICES.md](PRICES.md) has a section per product: the stands, the amplifiers and the SVS subwoofer. Each is sorted cheapest first. For each item it shows:
+[PRICES.md](PRICES.md) has a section per product: the amplifiers and the SVS subwoofer. Each is sorted cheapest first. For each item it shows:
 
 - **Retailer** (linked to the product page) and **Country** the seller is in.
 - **Price** in the seller's own currency. "+ VAT" marks sellers outside the UK that show prices without VAT.
@@ -81,7 +81,7 @@ npm ci
 npx playwright install chromium
 npm test
 npm run dry-run                                     # all targets; nothing saved or sent
-npx tsx src/main.ts --dry-run --only=kef-uk-s3-indigo,audiolounge-kef-s3-indigo
+npx tsx src/main.ts --dry-run --only=nord-three-1et6525sa-1et400a-std,nintronics-svs-sb1000pro-black-ash
 ```
 
 The dry run prints each target's price, stock, source and diagnostic notes. It also compares against the saved state and prints the plain-text version of the email it would have sent. To send for real locally, set the same variables as the secrets and run `npm run monitor`.
@@ -90,7 +90,7 @@ The dry run prints each target's price, stock, source and diagnostic notes. It a
 
 Edit [src/targets.ts](src/targets.ts).
 
-- **Add**: append an entry with a unique `id`, a `name`, `retailer`, `url`, `group` (`A` or `B` for the stands, `C` for the amplifiers, `D` for the subwoofer; a new product needs a new group and a section in [src/prices-table.ts](src/prices-table.ts)), `country`, and `vat` (`'incl'` if the price includes VAT, which UK prices always do; `'excl'` if not). Run `npx tsx src/main.ts --dry-run --only=<id>` and check the price and source.
+- **Add**: append an entry with a unique `id`, a `name`, `retailer`, `url`, `group` (`C` for the amplifiers, `D` for the subwoofer; a new product needs a new group and a section in [src/prices-table.ts](src/prices-table.ts)), `country`, and `vat` (`'incl'` if the price includes VAT, which UK prices always do; `'excl'` if not). Run `npx tsx src/main.ts --dry-run --only=<id>` and check the price and source.
   - If the page covers several variants, add `variant.steps`. These can be `select` (a `<select>` value), `click` (a swatch or label) or `expectValue` (confirms that a selection took effect). If the page's JSON-LD lists each variant separately, set `variant.offerMatch` to a regex matching that variant's SKU or GTIN. If it doesn't, add `selectors` for the displayed price.
   - If the structured data is missing or wrong, add `selectors` (and optionally a `stockSelector`).
   - If a cookie banner isn't dismissed automatically, set `cookieSelector` to the button that closes it.
@@ -112,11 +112,6 @@ The workflow commits this file after each run. That also keeps the repo active, 
 
 ## Notes on the current targets
 
-- **Peter Tyson**: the generic URL is a single-colour product, "KEF S3 Floor Stands - Indigo Blue" (SKU `KEFS3STDBLUE`). No selection is needed.
-- **HBH Woolacotts** redirects to its clearance section.
-- **Audio Lounge** has one price for all colours. Its colour `<select>` is hidden behind swatch buttons, so the monitor clicks the Indigo swatch and checks that it registered.
-- **Doug Brady HiFi** uses a custom colour dropdown. The monitor opens it, chooses "Indigo Blue", and takes that colour's own price from the page data (KEF SKU `SP4062CA`).
-- **HifiSound** calls the colour "Gloss Indigo", but KEF only makes the S3 in Indigo Matte. Its £699 price matches the pair price elsewhere. The page's structured data describes the Slate Grey version, so the monitor reads the displayed price after choosing Indigo.
 - **Apollon Audio** (Slovenia): tracks the 1ET400A ST and the 1ET6525SA ST (newer module, built to order in 15–20 working days). Prices exclude EU VAT. Cover colour doesn't change the price. Op-amp options do: Sonic Imagery 994 adds €200 and Sparkos Labs SS2590 PRO adds €400. On the 1ET6525SA ST, a 5-year warranty adds 10%. Mains voltage and binding posts are free choices. The monitor tracks the base price.
 - **VTV Amplifier** (USA) and **Maroon Audio** (China) publish price ranges because their options change the price, so they use `priceFrom: true`. VTV's base price excludes its input-buffer, speaker-terminal and 12V-trigger options. VTV's 1ET400A model isn't tracked, as it's no longer made; its 1ET6525SA successor is. Maroon's base price is its Standard Edition; the Luxury Edition is $1,600, and shipping is $70.
 - **Buckeye Amps** (USA) has no structured data, so the monitor reads the displayed price. It builds to order in 3–4 weeks and asks international buyers to contact it before ordering.
