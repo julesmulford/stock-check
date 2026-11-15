@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 14 Nov 2026, 13:38 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 15 Nov 2026, 14:03 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## Purifi stereo amplifiers
 
