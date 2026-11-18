@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T16:11:20.880Z",
+  "updatedAt": "2026-11-18T15:46:59.854Z",
   "targets": {
     "apollon-purifi-1et400a-st": {
       "name": "Apollon Purifi 1ET400A ST Stereo Amplifier",
       "retailer": "Apollon Audio",
       "url": "https://apollonaudio.com/product/purifi-1et400a-st-stereo-amplifier-1993/",
-      "consecutiveFailures": 0,
+      "consecutiveFailures": 1,
       "failureAlerted": false,
       "history": [
         {
@@ -17,7 +17,7 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
@@ -25,7 +25,8 @@
       "originalPrice": 1090,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T11:42:39.254Z",
-      "lastGbp": 908.03
+      "lastGbp": 908.03,
+      "lastError": "Price not found"
     },
     "nord-three-1et6525sa-1et400a-std": {
       "name": "Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier",
@@ -42,11 +43,11 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1010,
       "currency": "GBP",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "lastGbp": 1010,
       "originalPrice": 1010,
       "originalCurrency": "GBP",
@@ -56,7 +57,7 @@
       "name": "Apollon Purifi 1ET6525SA ST Stereo Amplifier",
       "retailer": "Apollon Audio",
       "url": "https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/",
-      "consecutiveFailures": 0,
+      "consecutiveFailures": 1,
       "failureAlerted": false,
       "history": [
         {
@@ -83,7 +84,7 @@
           "change": "drop"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1090,
       "currency": "EUR",
       "availability": "in_stock",
@@ -91,7 +92,8 @@
       "originalPrice": 1090,
       "originalCurrency": "EUR",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 908.03
+      "lastGbp": 908.03,
+      "lastError": "Price not found"
     },
     "audiophonics-lpa-s450et": {
       "name": "Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W",
@@ -133,15 +135,14 @@
           "change": "stock"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1290,
       "currency": "EUR",
       "availability": "preorder",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 1290,
       "originalCurrency": "EUR",
-      "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 1074.64
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "audiophonics-hpa-s450et": {
       "name": "Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W",
@@ -175,21 +176,20 @@
           "change": "stock"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1490,
       "currency": "EUR",
       "availability": "in_stock",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 1490,
       "originalCurrency": "EUR",
-      "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 1241.25
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "vtv-purifi-1et6525sa-stereo": {
       "name": "VTV Stereo Purifi 1ET6525SA Amplifier",
       "retailer": "VTV Amplifier",
       "url": "https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/",
-      "consecutiveFailures": 0,
+      "consecutiveFailures": 1,
       "failureAlerted": false,
       "history": [
         {
@@ -201,7 +201,7 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1150,
       "currency": "USD",
       "availability": "in_stock",
@@ -209,7 +209,8 @@
       "originalPrice": 1150,
       "originalCurrency": "USD",
       "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 871.81
+      "lastGbp": 871.81,
+      "lastError": "Price not found"
     },
     "buckeye-purifi-1et6525sa-2ch": {
       "name": "Buckeye Purifi 1ET6525SA 2-Channel Amplifier",
@@ -227,21 +228,20 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1195,
       "currency": "USD",
       "availability": "unknown",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 1195,
       "originalCurrency": "USD",
-      "originalAt": "2026-09-24T15:18:00.987Z",
-      "lastGbp": 905.92
+      "originalAt": "2026-09-24T15:18:00.987Z"
     },
     "maroon-m6525-stereo": {
       "name": "Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier",
       "retailer": "Maroon Audio",
       "url": "https://maroonaudio.com/product/1et6525sa-purifi-stereo/",
-      "consecutiveFailures": 0,
+      "consecutiveFailures": 1,
       "failureAlerted": false,
       "history": [
         {
@@ -253,7 +253,7 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 1060,
       "currency": "USD",
       "lastGbp": 803.58,
@@ -261,7 +261,8 @@
       "lastSuccessAt": "2026-11-17T16:11:20.880Z",
       "originalPrice": 1060,
       "originalCurrency": "USD",
-      "originalAt": "2026-09-24T15:18:00.987Z"
+      "originalAt": "2026-09-24T15:18:00.987Z",
+      "lastError": "Price not found"
     },
     "homeavdirect-svs-sb1000pro-black-ash": {
       "name": "SVS SB-1000 Pro Subwoofer, Black Ash",
@@ -279,12 +280,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -305,12 +306,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -331,12 +332,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "unknown",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -357,12 +358,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "unknown",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -383,12 +384,12 @@
           "change": "initial"
         }
       ],
-      "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+      "lastCheckedAt": "2026-11-18T15:46:59.854Z",
       "lastPrice": 679,
       "currency": "GBP",
       "lastGbp": 679,
       "availability": "in_stock",
-      "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+      "lastSuccessAt": "2026-11-18T15:46:59.854Z",
       "originalPrice": 679,
       "originalCurrency": "GBP",
       "originalAt": "2026-09-26T11:32:39.089Z"
@@ -404,17 +405,17 @@
   "exdemo": {
     "pages": {
       "homeavdirect-clearance-svs": {
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "failureAlerted": true,
-        "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+        "lastCheckedAt": "2026-11-18T15:46:59.854Z",
         "lastSuccessAt": "2026-11-10T15:02:51.452Z",
         "lastItemCount": 0,
         "lastError": "No listings and no \"no products\" message: the page layout may have changed"
       },
       "homeavdirect-exdemo-svs": {
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "failureAlerted": true,
-        "lastCheckedAt": "2026-11-17T16:11:20.880Z",
+        "lastCheckedAt": "2026-11-18T15:46:59.854Z",
         "lastSuccessAt": "2026-11-10T15:02:51.452Z",
         "lastItemCount": 0,
         "lastError": "No listings and no \"no products\" message: the page layout may have changed"
@@ -422,8 +423,8 @@
       "nintronics-bargains-svs": {
         "consecutiveFailures": 0,
         "failureAlerted": false,
-        "lastCheckedAt": "2026-11-17T16:11:20.880Z",
-        "lastSuccessAt": "2026-11-17T16:11:20.880Z",
+        "lastCheckedAt": "2026-11-18T15:46:59.854Z",
+        "lastSuccessAt": "2026-11-18T15:46:59.854Z",
         "lastItemCount": 0
       }
     },
