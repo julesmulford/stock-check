@@ -1,12 +1,12 @@
 # Current prices
 
-Updated 21 Nov 2026, 14:45 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 22 Nov 2026, 14:41 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## Purifi stereo amplifiers
 
 | Product | Retailer | Country | Price | Original price | Since original | ≈ GBP | ≈ GBP incl. UK VAT | Stock | Today |
 |---|---|---|---|---|---|---|---|---|---|
-| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £807.62 | £969.14 | In stock | ⚠ price not found; price from 20 Nov |
+| Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £807.62 | £969.14 | In stock | – |
 | Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier | [Nord Acoustics](https://nordacoustics.co.uk/product/nord-three-1et6525sa-1et400a-std-standard-stereo-amplifier-copy/) | UK | £1,010.00 | £1,010.00 (24 Sept) | – | £1,010.00 | £1,010.00 | In stock | – |
 | VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £876.19 | £1,051.43 | In stock | – |
 | Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html) | France | €1,290.00 | €1,290.00 (24 Sept) | – | £1,080.22 | £1,080.22 | Pre-order | – |
