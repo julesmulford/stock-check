@@ -1,6 +1,6 @@
 # Current prices
 
-Updated 27 Nov 2026, 16:47 (UK time). Each section is sorted cheapest first, including UK VAT.
+Updated 28 Nov 2026, 15:39 (UK time). Each section is sorted cheapest first, including UK VAT.
 
 ## Purifi stereo amplifiers
 
@@ -8,10 +8,10 @@ Updated 27 Nov 2026, 16:47 (UK time). Each section is sorted cheapest first, inc
 |---|---|---|---|---|---|---|---|---|---|
 | Maroon Audio M6525 Purifi 1ET6525SA Stereo Amplifier | [Maroon Audio](https://maroonaudio.com/product/1et6525sa-purifi-stereo/) | China | US$1,060.00 + VAT | US$1,060.00 + VAT (24 Sept) | – | £807.80 | £969.36 | In stock | – |
 | Nord Three 1ET6525SA / 1ET400A STD Stereo Amplifier | [Nord Acoustics](https://nordacoustics.co.uk/product/nord-three-1et6525sa-1et400a-std-standard-stereo-amplifier-copy/) | UK | £1,010.00 | £1,010.00 (24 Sept) | – | £1,010.00 | £1,010.00 | In stock | – |
-| VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £876.39 | £1,051.67 | In stock | – |
+| VTV Stereo Purifi 1ET6525SA Amplifier | [VTV Amplifier](https://vtvamplifier.com/product/vtv-amplifier-stereo-purifi-audio-1et-6525sa-amplifier-copy/) | USA | US$1,150.00 + VAT | US$1,150.00 + VAT (24 Sept) | – | £876.39 | £1,051.67 | In stock | ⚠ price not found; price from 27 Nov |
 | Audiophonics LPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-lpa-s450et-p-20206.html) | France | €1,290.00 | €1,290.00 (24 Sept) | – | £1,077.24 | £1,077.24 | Pre-order | – |
-| Apollon Purifi 1ET400A ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-1et400a-st-stereo-amplifier-1993/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £910.23 | £1,092.28 | In stock | – |
-| Apollon Purifi 1ET6525SA ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £910.23 | £1,092.28 | In stock | – |
+| Apollon Purifi 1ET400A ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-1et400a-st-stereo-amplifier-1993/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £910.23 | £1,092.28 | In stock | ⚠ price not found; price from 27 Nov |
+| Apollon Purifi 1ET6525SA ST Stereo Amplifier | [Apollon Audio](https://apollonaudio.com/product/purifi-eigentakt-1et6525sa-st-stereo-amplifier/) | Slovenia | €1,090.00 + VAT | €1,090.00 + VAT (24 Sept) | – | £910.23 | £1,092.28 | In stock | ⚠ price not found; price from 27 Nov |
 | Buckeye Purifi 1ET6525SA 2-Channel Amplifier | [Buckeye Amps](https://www.buckeyeamp.com/shop/amplifiers/purifi/1et6525sa/2_channel) | USA | US$1,195.00 + VAT | US$1,195.00 + VAT (24 Sept) | – | £910.68 | £1,092.82 | — | – |
 | Audiophonics HPA-S450ET Purifi 1ET6525SA 2x450W | [Audiophonics](https://www.audiophonics.fr/en/power-amplifiers/audiophonics-hpa-s450et-p-20205.html) | France | €1,490.00 | €1,490.00 (24 Sept) | – | £1,244.26 | £1,244.26 | Pre-order | – |
 
@@ -19,8 +19,8 @@ Updated 27 Nov 2026, 16:47 (UK time). Each section is sorted cheapest first, inc
 
 | Retailer | Country | Price | Original price | Since original | Stock | Today |
 |---|---|---|---|---|---|---|
+| [Peter Tyson](https://petertyson.co.uk/svs-sb-1000-pro-subwoofer) | UK | £599.00 | £679.00 (26 Sept) | ↓ £80.00 (−11.8%) | In stock | **↓ £80.00 (−11.8%)** |
 | [Home AV Direct](https://www.homeavdirect.co.uk/products/svs-sb-1000-pro-subwoofer-black-ash) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | – |
-| [Peter Tyson](https://petertyson.co.uk/svs-sb-1000-pro-subwoofer) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | – |
 | [Home Media](https://www.homemedialimited.co.uk/product/svs-sb-1000-pro-subwoofer/) | UK | £679.00 | £679.00 (26 Sept) | – | — | – |
 | [Premium Sound](https://premiumsound.co.uk/product/speakers/subwoofers/svs-sb1000-pro/) | UK | £679.00 | £679.00 (26 Sept) | – | — | – |
 | [Nintronics](https://nintronics.co.uk/products/svs-sb-1000-pro-subwoofer) | UK | £679.00 | £679.00 (26 Sept) | – | In stock | – |
